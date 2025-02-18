@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import NavBar from "./components/Navbar";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
-import Projects from "./components/projects";
+import Projects from "./components/Projects";
 import Services from "./components/services";
 import { useEffect, useState } from "react";
 import IntroSequence from "./components/IntroSequence";
