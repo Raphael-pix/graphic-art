@@ -4,7 +4,7 @@ import NavBar from "./components/Navbar";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
-import Services from "./components/Services";
+import Services from "./components/Services"
 import { useEffect, useState } from "react";
 import IntroSequence from "./components/IntroSequence";
 
