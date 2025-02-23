@@ -1,0 +1,93 @@
+"use client";
+
+import ProjectForm from "./projectForm";
+import { useState } from "react";
+import SmileyButton from "./smileyButton";
+import FlippingText from "./flippingText";
+import MenuButton from "./menuButton";
+
+const NavBar = () => {
+  const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const menuItems = [
+    { title: 'Work', href: '/work' },
+    { title: 'About', href: '/about' },
+    { title: 'Services', href: '/services' },
+    { title: 'Blog', href: '/blog' }
+  ];
+
+  const contactInfo = {
+    sayHello: 'hello@serious.business',
+    apply: 'apply@serious.business',
+    location: 'München, Germany | Stockholm, Sweden'
+  };
+
+  return (
+    <div  className="sticky top-0 z-[1000] h-20 border-none transition-all duration-700 overflow-hidden max-w-[100vw] lg:h-16">
+      <header className="z-[1001]">
+        <nav className="flex flex-row-reverse items-center justify-between p-4 lg:grid grid-cols-2 md:grid-cols-3  ">
+          <SmileyButton setIsProjectFormOpen={setIsProjectFormOpen} setIsMobileMenuOpen={setIsMobileMenuOpen}/>
+          <FlippingText/>
+          <MenuButton menuItems={menuItems}/>
+        </nav>
+      </header>
+        {/* Mobile Menu Overlay */}
+        <div className={`
+          fixed inset-0 bg-white transition-transform duration-300 ease-in-out z-50
+          ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+          lg:hidden
+        `}>
+          <div className="p-6 h-full flex flex-col">
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="self-end mb-8"
+            >
+              <div className="bg-pink-200 rounded-full px-4 py-1">
+                Close ×
+              </div>
+            </button>
+
+            {/* Menu Items */}
+            <div className="text-4xl space-y-6 mb-auto">
+              {menuItems.map((item) => (
+                <div key={item.title}>
+                  <a href={item.href} className="hover:opacity-70 transition-opacity">
+                    {item.title}
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6 text-sm">
+              <div>
+                <div className="text-gray-500 mb-1">SAY HELLO</div>
+                <a href={`mailto:${contactInfo.sayHello}`} className="underline">
+                  {contactInfo.sayHello}
+                </a>
+              </div>
+              
+              <div>
+                <div className="text-gray-500 mb-1">EXCEPTIONAL TALENT?</div>
+                <a href={`mailto:${contactInfo.apply}`} className="underline">
+                  {contactInfo.apply}
+                </a>
+              </div>
+
+              <div className="text-gray-500">
+                {contactInfo.location}
+              </div>
+            </div>
+          </div>
+        </div>
+      <ProjectForm
+        isOpen={isProjectFormOpen}
+        onClose={() => setIsProjectFormOpen(false)}
+      />
+    </div>
+  );
+};
+
+export default NavBar;
