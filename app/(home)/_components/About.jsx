@@ -117,11 +117,11 @@ export default function About() {
       <div className="flex flex-col items-start gap-8 lg:gap-16 lg:flex-row">
         {/* Facts Section */}
         <div className="w-full max-w-md lg:w-[20%]">
-          <div className="py-2 border-b border-gray-700 flex items-center justify-between">
-            <h1 className="text-xs text-gray-800 font-semibold uppercase">
+          <div className="py-2 border-b border-neutral-grey flex items-center justify-between">
+            <h1 className="text-xs font-semibold uppercase">
               Serious Facts
             </h1>
-            <span className="text-xs text-gray-700 flex gap-2">
+            <span className="text-xsflex gap-2">
               <span ref={factCountRef}>
                 {String(currentFactIndex + 1).padStart(2, "0")}
               </span>
@@ -134,7 +134,7 @@ export default function About() {
             <p className="text-6xl font-bold mb-2" ref={factNumberRef}>
               {facts[currentFactIndex].number}
             </p>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm">
               {facts[currentFactIndex].text}
             </p>
           </div>
@@ -142,14 +142,14 @@ export default function About() {
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full border bg-white transition-colors"
+              className="p-2 rounded-full border transition-colors"
               aria-label="Previous fact"
             >
               <ArrowLeft size={16} />
             </button>
             <button
               onClick={handleNext}
-              className="p-2 rounded-full border bg-white transition-colors relative"
+              className="p-2 rounded-full border transition-colors relative"
               aria-label="Next fact"
             >
               <ArrowRight size={16} />

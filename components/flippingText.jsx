@@ -1,54 +1,59 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const FlippingText = () => {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
-  const [text, setText] = useState("Branding and digital design"); // Initial text
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (!containerRef.current || !textRef.current) return;
+    if (!containerRef.current) return;
 
-    const tl = gsap.timeline({
+    gsap.to(containerRef.current, {
+      rotateY: 180, // Flip on Y-axis
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top +=100",
-        end:"top +=50",
-        scrub: 1, // Smooth transition while scrolling
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
       },
     });
-
-    tl.to(containerRef.current, {
-      rotationX: 180, // Halfway flip
-      duration: 2,
-      ease: "power2.inOut",
-      onComplete: () => setText("Graphiq.art"),
-    })
-      .to(containerRef.current, {
-        rotationX: 360, // Complete flip
-        duration: 2,
-        ease: "power2.inOut",
-      });
-
-    return () => tl.kill(); // Cleanup animation
   }, []);
 
   return (
-    <div ref={containerRef} className="flex items-center justify-center">
-      {/* Text Container */}
+    <div className="flex items-center justify-center w-full">
+      {/* 3D Container */}
       <div
-        className="text-2xl font-bold"
+        ref={containerRef}
+        className="relative w-full h-20 text-3xl font-bold"
         style={{
           transformStyle: "preserve-3d",
-          transformOrigin: "center center",
+          perspective: 1000,
         }}
       >
-        <span ref={textRef}>{text}</span>
+        {/* Front Side */}
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{
+            backfaceVisibility: "hidden",
+          }}
+        >
+          Graphiq.art
+        </div>
+
+        {/* Back Side */}
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{
+            transform: "rotateY(180deg)",
+            backfaceVisibility: "hidden",
+          }}
+        >
+          Graphiq.art
+        </div>
       </div>
     </div>
   );

@@ -15,13 +15,15 @@ export const CompanyName = () => {
       <text
         x="50%"
         y="80%"
-        fontFamily="Georgia, serif"
-        fontSize="136"
+        fontFamily="Outfit, sans-serif"
+        fontSize="152"
         fontWeight="bold"
-        fill="#1A1A1A"
         textAnchor="middle"
+        style={{
+          fill:"var(--text-color)"
+        }}
       >
-        SERIOUS.BUSINESS
+        GRAPHIQ.ART
       </text>
     </svg>
   );

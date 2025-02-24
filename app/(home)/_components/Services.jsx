@@ -72,7 +72,7 @@ const Services = () => {
 
   useEffect(() => {
     const updateScreenSize = () => {
-      const isLarge = window.innerWidth >= 1024; // Tailwind's `lg:` breakpoint
+      const isLarge = window.innerWidth >= 1024;
       setIsLargeScreen(isLarge);
     };
 
@@ -111,15 +111,15 @@ const Services = () => {
 
 
   return (
-    <div  ref={containerRef} className="py-4 overflow-hidden">
+    <div  ref={containerRef} className="py-4">
       {/* Services Header */}
-        <h2 className="text-3xl font-medium text-gray-900 p-4 lg:p-6">Services</h2>
+        <h2 className="text-3xl font-medium p-4 lg:p-6">Services</h2>
         <div ref={cardContinerRef} className="relative z-50 w-screen overflow-hidden lg:max-h-[42rem]">
           {servicesData.map((item, i) => (
             <div
              key={item.title} 
              ref={(el) => (cardsRef.current[i] = el)}
-             className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-6 text-black font-standard lg:max-h-96 lg:px-8  ${item.bgColor === "bg-black" && "text-white"} ${item.bgColor}`}
+             className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-6 font-standard lg:max-h-96 lg:px-8  ${item.bgColor === "bg-black" ? "text-neutral-white" : "text-neutral-black"} ${item.bgColor}`}
              style={{
               zIndex: servicesData.length - i, // Ensures proper stacking
             }}

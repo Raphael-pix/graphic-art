@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const EmbossedLogo = ({ text = "SB", color = "pink-300" }) => {
+const EmbossedLogo = ({ text = "SB", color = "primary-pink" }) => {
   const containerRef = useRef(null);
   const shadowRef = useRef(null);
 
@@ -70,7 +70,7 @@ const EmbossedLogo = ({ text = "SB", color = "pink-300" }) => {
         w-[250px] h-[250px] text-4xl
         sm:w-[300px] sm:h-[300px] sm:text-5xl
         md:w-[400px] md:h-[400px] md:text-6xl
-        lg:w-[450px] lg:h-[450px] lg:text-7xl
+        lg:w-[450px] lg:h-[450px] lg:text-8xl
       `}
     >
       {/* Dynamic shadow layer */}
@@ -82,14 +82,14 @@ const EmbossedLogo = ({ text = "SB", color = "pink-300" }) => {
         }}
       />
       {/* Outer shadow rim */}
-      <div className="absolute inset-0 rounded-full bg-pink-300 brightness-105 shadow-inner" />
+      <div className="absolute inset-0 rounded-full bg-primary-pink brightness-105 shadow-inner" />
 
       {/* Inner embossed circle */}
-      <div className="absolute inset-4 rounded-full bg-pink-300 brightness-100 shadow-lg" />
+      <div className="absolute inset-4 rounded-full bg-primary-pink brightness-100 shadow-lg" />
 
       {/* Text with embossed effect */}
       <span
-        className={`relative font-bold tracking-wider text-${color} brightness-95`}
+        className={`relative font-bold tracking-wider text-primary-pink brightness-95`}
         style={{
           textShadow: `
             -1px -1px 0 rgba(255,255,255,0.2),
@@ -101,14 +101,14 @@ const EmbossedLogo = ({ text = "SB", color = "pink-300" }) => {
         <svg
           width="300"
           height="150"
-          viewBox="0 0 100 50"
+          viewBox="0 0 120 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="mt-4 w-16 sm:w-24 md:w-32 lg:w-40"
         >
           <path
-            d="M10 10 Q 50 50, 90 10"
-            stroke="#f9a8d4"
+            d="M5 5 Q 50 50, 110 5"
+            stroke="#fbc1d4"
             strokeWidth="8"
             fill="none"
             strokeLinecap="round"

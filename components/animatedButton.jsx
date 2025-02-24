@@ -46,8 +46,12 @@ const AnimatedButton = ({ title, containerStyles }) => {
         <span
           ref={aboutTextRef}
           className={
-            `relative z-10 rounded-full px-6 py-2 text-sm font-semibold text-gray-900 ${containerStyles}`
+            `relative z-10 rounded-full px-6 py-2 text-sm font-semibold ${containerStyles}`
           }
+          style={{
+            color:"var(--button-text)",
+            backgroundColor:"var(--button-bg)"
+          }}
         >
           {title}
         </span>
@@ -57,6 +61,10 @@ const AnimatedButton = ({ title, containerStyles }) => {
             "rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300",
             containerStyles
           )}
+          style={{
+            color:"var(--button-text)",
+            backgroundColor:"var(--button-bg)"
+          }}
         >
           {isHovered ? (
             <ArrowRight size={14} color="#111111" />

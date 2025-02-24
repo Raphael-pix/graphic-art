@@ -28,7 +28,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
       <Button
         id="work-button"
         title="Let's work"
-        containerClass="bg-white flex  items-center justify-center gap-1 px-4 py-2"
+        containerClass="flex items-center justify-center gap-1 px-4 py-2"
         onClick={() => setIsProjectFormOpen(true)}
       />
       <div
@@ -59,7 +59,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
       <Button
        id="menu-button"
        title={<Ellipsis size={18} color="#111111"/>}
-       containerClass="bg-white flex  items-center justify-center p-2 lg:hidden"
+       containerClass="flex items-center justify-center p-2 lg:hidden"
        onClick={()=>setIsMobileMenuOpen(true)}
       />
     </div>

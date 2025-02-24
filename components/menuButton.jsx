@@ -70,13 +70,17 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
         <div
           ref={containerRef}
           className={clsx(
-            "flex relative z-10 bg-white rounded-full px-6 py-2 overflow-hidden",
+            "flex relative z-10 rounded-full px-6 py-2 overflow-hidden",
             containerStyles
           )}
+          style={{
+            color:"var(--button-text)",
+            backgroundColor:"var(--button-bg)"
+          }}
         >
           <span
             ref={titleRef}
-            className="text-sm font-semibold text-gray-900 transition-opacity overflow-hidden"
+            className="text-sm transition-opacity overflow-hidden"
           >
             {title}
           </span>
@@ -85,7 +89,7 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
               <span
                 ref={(el) => (menuItemsRef.current[index] = el)}
                 key={index}
-                className="hidden opacity-0 text-gray-500 font-semibold mx-[6px] hover:text-gray-900 transition-colors"
+                className="hidden opacity-0 text-gray-500 mx-[6px] hover:text-gray-900 transition-colors hover:font-semibold"
               >
                 {item.title}
               </span>
@@ -97,9 +101,13 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
         <div
           ref={arrowRef}
           className={clsx(
-            "bg-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300",
+            "rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300",
             containerStyles
           )}
+          style={{
+            color:"var(--button-text)",
+            backgroundColor:"var(--button-bg)"
+          }}
         >
           <ArrowLeft size={14} color="#111827" />
         </div>

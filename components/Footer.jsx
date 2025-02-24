@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import SmileyFace from "./smiley";
 import Promotion from "./Promotion";
-import gsap from "gsap";
+import "iconify-icon"
 
-const Footer = () => {
-  const sectionRef = useRef(null);
+const Footer = ({footerRef}) => {
 
   const menuItems = [
     { label: "Work", href: "/work" },
@@ -20,38 +19,13 @@ const Footer = () => {
     { label: "LinkedIn", href: "#" },
     { label: "Instagram", href: "#" },
   ];
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    gsap.to(document.body, {
-      backgroundColor: "#f9a8d4", // Change to dark background
-      color: "#111111",
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top +=200",
-        end: "top top",
-        scrub: true,
-        onLeaveBack: () => {
-          gsap.to(document.body, {
-            backgroundColor: "#f9a8d4", // Original background
-            color: "#000000", // Original text color
-            duration: 1,
-            ease: "power2.out",
-          });
-        },
-      },
-    });
-  }, []);
-
   return (
     <footer
-      ref={sectionRef}
+      ref={footerRef}
       className="px-4 py-4 min-h-[80vh] flex flex-col lg:px-8"
     >
       <Promotion />
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col gap-6 items-start justify-between lg:flex-row">
+      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col gap-6 items-start justify-between lg:flex-row lg:mt-8">
         <div className="grid grid-col-1 md:grid-cols-2 gap-8 lg:gap-6">
           {/* Left Column - Explore */}
           <div className="flex items-start gap-6">
@@ -103,9 +77,9 @@ const Footer = () => {
             </div>
             <a
               href="mailto:hello@serious.business"
-              className="text-xl hover:opacity-70 transition-opacity block"
+              className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
-              hello@serious.business
+              hello <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
             </a>
           </div>
 
@@ -115,9 +89,9 @@ const Footer = () => {
             </div>
             <a
               href="mailto:apply@serious.business"
-              className="text-xl hover:opacity-70 transition-opacity block"
+              className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
-              apply@serious.business
+              apply  <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
             </a>
           </div>
         </div>
@@ -134,27 +108,27 @@ const Footer = () => {
         </a>
       </div>
       {/* Bottom Bar */}
-      <div className="max-w-7xl w-full lg:pt-12 lg:mt-12">
-        <div className="text-[2rem] font-medium mb-2 text-center lg:text-[116px]">
-          <span>SERIOUS</span>{" "}
+      <div className="max-w-7xl w-full lg:pt-12 lg:mt-12 lg:px-8">
+        <div className="text-[2rem] font-medium mb-2 text-center lg:text-[124px]">
+          <span>GRAPHIQ</span>{" "}
           <span className="inline-block">
             <SmileyFace />
           </span>{" "}
-          <span>BUSINESS</span>
+          <span>ART</span>
         </div>
         <div className="flex justify-between items-center">
-          <div className="text-[10px] font-light">SeriousBuisnessGmHb</div>
+          <div className="text-[10px] font-light">GraphiqArtGmHb</div>
           <div className="text-[10px] font-light">
             München, Germany / Stockholm, Sweden
           </div>
           <div className="hidden text-[10px] space-x-4 font-light lg:block">
-            <a href="#" className="hover:opacity-70 transition-opacity">
+            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
               IMPRINT
             </a>
-            <a href="#" className="hover:opacity-70 transition-opacity">
+            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
               PRIVACY
             </a>
-            <a href="#" className="hover:opacity-70 transition-opacity">
+            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
               PRESS
             </a>
           </div>

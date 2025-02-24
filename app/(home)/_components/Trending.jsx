@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowLeft } from "lucide-react";
 import Partners from "./Partners";
 import { partnerItems } from "@/constants";
 import Button from "@/components/button";
 import TrendingCard from "@/components/trendingCard";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const trendingItems = [
   {
@@ -29,28 +25,9 @@ const trendingItems = [
   },
 ];
 
-export default function Trending() {
-  const bgRef = useRef(null);
-
-  useEffect(() => {
-    if (!bgRef.current) return;
-
-    gsap.to(document.body, {
-      backgroundColor: "#010101", // Change to dark background
-      color: "#f9a8d4",
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: bgRef.current,
-        start: "top 40%",
-        end: "center 80%",
-        scrub: true,
-      },
-    });
-  }, []);
-
+export default function Trending({trendingRef}) {
   return (
-    <div ref={bgRef} className="transition-colors duration-500">
+    <div ref={trendingRef} className="transition-colors duration-500 overflow-hidden">
       <section className=" flex flex-col items-center justify-center px-4 lg:min-h-screen lg:px-12">
         <div className="flex justify-between items-center mb-8 w-full py-4">
           <h1 className="text-4xl font-medium lg:text-6xl">What's trending</h1>
@@ -58,12 +35,12 @@ export default function Trending() {
             <Button
               id="menu-button"
               title="What's trending"
-              containerClass="bg-white flex items-center justify-center px-7 py-3"
+              containerClass="flex items-center justify-center px-7 py-3"
             />
             <Button
               id="arrow-button"
               title={<ArrowLeft size={16} color="#111827" />}
-              containerClass="bg-white flex items-center justify-center p-2  rounded-full"
+              containerClass="flex items-center justify-center p-2  rounded-full"
             />
           </div>
         </div>
@@ -82,12 +59,12 @@ export default function Trending() {
           <Button
             id="menu-button"
             title="What's trending"
-            containerClass="bg-white flex items-center justify-center px-7 py-3"
+            containerClass="flex items-center justify-center px-7 py-3"
           />
           <Button
             id="arrow-button"
             title={<ArrowLeft size={16} color="#111827" />}
-            containerClass="bg-white flex items-center justify-center p-2  rounded-full"
+            containerClass="flex items-center justify-center p-2  rounded-full"
           />
         </div>
       </section>

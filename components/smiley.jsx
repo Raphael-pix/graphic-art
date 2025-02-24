@@ -85,7 +85,7 @@ export default function SmileyFace() {
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Face Circle */}
-      <circle cx="60" cy="60" r="50" stroke="#111111" strokeWidth="5" fill="none" />
+      <circle cx="60" cy="60" r="50" stroke="var(--text-color)" strokeWidth="7" fill="none" />
 
       {/* Eyes */}
       <circle
@@ -93,21 +93,21 @@ export default function SmileyFace() {
         cx="45"
         cy="45"
         r={isBlinking ? 2 : 6} // Slightly larger eyes
-        fill="#111111"
+        fill="var(--text-color)"
       />
       <circle
         ref={rightEyeRef}
         cx="75"
         cy="45"
         r={isBlinking ? 2 : 6}
-        fill="#111111"
+        fill="var(--text-color)"
       />
 
       {/* Mouth */}
       <path
         ref={mouthRef}
         d="M45 75 Q60 90 75 75" // Smiling path
-        stroke="#111111"
+        stroke="var(--text-color)"
         strokeWidth="4"
         fill="transparent"
       />
