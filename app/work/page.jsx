@@ -1,6 +1,6 @@
+import React from 'react'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/navbar'
-import React from 'react'
 
 const WorkPage = () => {
   return (

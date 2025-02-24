@@ -5,6 +5,7 @@ import { useState } from "react";
 import SmileyButton from "./smileyButton";
 import FlippingText from "./flippingText";
 import MenuButton from "./menuButton";
+import { X } from "lucide-react";
 
 const NavBar = () => {
   const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
@@ -38,14 +39,20 @@ const NavBar = () => {
           ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
           lg:hidden
         `}>
-          <div className="p-6 h-full flex flex-col">
+          <div 
+          className="p-6 h-full flex flex-col"
+          >
             {/* Close Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="self-end mb-8"
+              className="self-end mb-8 rounded-full flex items-center gap-2"
+              style={{
+                backgroundColor:"var( --bg-color)",
+                color:"var(--text-color)"
+              }}
             >
-              <div className="bg-pink-200 rounded-full px-4 py-1">
-                Close ×
+              <div className="rounded-full px-4 py-1">
+                Close <X size={16} className="inline" />
               </div>
             </button>
 

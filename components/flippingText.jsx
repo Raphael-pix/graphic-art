@@ -24,11 +24,11 @@ const FlippingText = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-[9rem] lg:w-full">
       {/* 3D Container */}
       <div
         ref={containerRef}
-        className="relative w-full h-20 text-3xl font-bold"
+        className="relative h-20 text-3xl font-bold bg-yellow-400"
         style={{
           transformStyle: "preserve-3d",
           perspective: 1000,

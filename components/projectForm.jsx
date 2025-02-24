@@ -179,7 +179,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
 
                   <button
                     type="submit"
-                    className="w-full flex justify-end"
+                    className="bg-white rounded-full flex justify-end ml-auto"
                   >
                     <AnimatedButton title={"submit"} containerStyles="bg-pink-300 text-black"/>
                   </button>
