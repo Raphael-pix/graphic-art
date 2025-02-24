@@ -13,7 +13,7 @@ import CustomCursor from "@/components/customCursor";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-screen">
+    <main className="relative min-h-screen">
       <CustomCursor/>
       {/* <IntroSequence/> */}
       <CompanyName/>
