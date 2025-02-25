@@ -1,5 +1,6 @@
 import React from "react";
-import ListItem from "./ListItem";
+import ListItem from "./listItem";
+
 
 const IndustriesList = () => {
   const industries = [
