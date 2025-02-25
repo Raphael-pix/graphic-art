@@ -36,7 +36,13 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
         className="absolute right-0 top-0 h-full flex items-center"
         style={{ transform: "translateX(-100%) rotate(0deg)" }}
       >
-        <div className="hidden w-8 h-8  items-center justify-center bg-white rounded-full shadow-md lg:flex">
+        <div 
+        className="hidden w-8 h-8  items-center justify-center rounded-full shadow-md lg:flex"
+        style={{
+          backgroundColor:"var(--button-bg)",
+          color:"var(--button-text)"
+        }}
+        >
           {/* Smiley SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"

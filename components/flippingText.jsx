@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 const FlippingText = () => {
   const containerRef = useRef(null);
@@ -35,25 +36,27 @@ const FlippingText = () => {
         }}
       >
         {/* Front Side */}
-        <div
+        <Link
           className="absolute inset-0 flex items-center justify-center"
           style={{
             backfaceVisibility: "hidden",
           }}
+          href={"/"}
         >
           Graphiq.art
-        </div>
+        </Link>
 
         {/* Back Side */}
-        <div
+        <Link
           className="absolute inset-0 flex items-center justify-center"
           style={{
             transform: "rotateY(180deg)",
             backfaceVisibility: "hidden",
           }}
+          href={"/"}
         >
           Graphiq.art
-        </div>
+        </Link>
       </div>
     </div>
   );

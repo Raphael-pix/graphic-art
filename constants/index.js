@@ -159,8 +159,8 @@ export const partnerItems = [
         achievements: [
           "3x Nominated Agency of the year",
           "5x site of the day",
-          "4x Developer award"
-        ]
+          "4x Developer award",
+        ],
       },
       {
         name: "dribbble",
@@ -175,8 +175,8 @@ export const partnerItems = [
           "2020 Gold and Silver Lovie",
           "2x Peoples Choice Award",
           "2018 Gold lovie",
-          "2017 Silver Lovie and People's choice"
-        ]
+          "2017 Silver Lovie and People's choice",
+        ],
       },
       {
         name: "figma",
@@ -187,9 +187,7 @@ export const partnerItems = [
             height="10vh"
           ></iconify-icon>
         ),
-        achievements: [
-          "1x FWA of the day",
-        ]
+        achievements: ["1x FWA of the day"],
       },
       {
         name: "awwwards",
@@ -200,9 +198,7 @@ export const partnerItems = [
             height="10vh"
           ></iconify-icon>
         ),
-        achievements: [
-          "Special 109",
-        ]
+        achievements: ["Special 109"],
       },
       {
         name: "awards",
@@ -216,8 +212,8 @@ export const partnerItems = [
         achievements: [
           "3x Nominated Agency of the year",
           "5x site of the day",
-          "4x Developer award"
-        ]
+          "4x Developer award",
+        ],
       },
       {
         name: "The DSA",
@@ -228,11 +224,48 @@ export const partnerItems = [
             height="10vh"
           ></iconify-icon>
         ),
-        achievements: [
-          "Communications award 2019",
-        ]
+        achievements: ["Communications award 2019"],
       },
     ],
     hasAchievements: true,
+  },
+];
+
+export const projects = [
+  {
+    name: "Rudy Capital",
+    title: "Turning crypto complexity into clarity",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic1.webp",
+  },
+  {
+    name: "Nola",
+    title: "Beauty and bullsh*t I dont mix",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic2.webp",
+  },
+  {
+    name: "Otterspace",
+    title: "Unleashing the power of communities",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic3.webp",
+  },
+  {
+    name: "Quivo",
+    title: "Logistics made simple",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic4.webp",
+  },
+  {
+    name: "Yuri",
+    title: "Biotech in space for better life on earth",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic8.webp",
+  },
+  {
+    name: "Ascon systems",
+    title: "Re-imagining process automation",
+    description: "startegy - visual identity - website",
+    image: "/assets/images/pic6.webp",
   },
 ];

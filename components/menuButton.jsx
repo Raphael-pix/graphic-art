@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ArrowLeft } from "lucide-react";
 import clsx from "clsx";
+import Link from "next/link";
 
 const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpen }) => {
   const [textWidth, setTextWidth] = useState(0);
@@ -86,13 +87,14 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
           </span>
           <span className="items-center justify-center gap-4">
             {menuItems.map((item, index) => (
-              <span
+              <Link
                 ref={(el) => (menuItemsRef.current[index] = el)}
                 key={index}
-                className="hidden opacity-0 text-gray-500 mx-[6px] hover:text-gray-900 transition-colors hover:font-semibold"
+                className="hidden opacity-0 text-gray-500 hover:text-gray-900 mx-[6px] transition-colors hover:font-semibold"
+                href={item.href}
               >
                 {item.title}
-              </span>
+              </Link>
             ))}
           </span>
         </div>
