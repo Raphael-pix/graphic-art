@@ -5,12 +5,13 @@ import Footer from '@/components/Footer';
 import NavBar from '@/components/navbar';
 import HeroSection from './_components/Hero';
 import WhenSection from './_components/When';
-import VideoSection from './_components/video';
+import VideoSection from './_components/Video';
 import CustomCursor from '@/components/customCursor';
 import Services from './_components/Services';
 import WhySection from './_components/Why';
 import ValuesSection from './_components/Values';
 import TestimonialsSection from './_components/Testimonials';
+import BrandsSection from './_components/Brands';
 
 const ServicesPage = () => {
 
@@ -30,6 +31,7 @@ const ServicesPage = () => {
       <WhySection/>
       <ValuesSection/>
       <TestimonialsSection/>
+      <BrandsSection/>
       <Footer />
     </main>
   );

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import clsx from "clsx";
 
-const AnimatedButton = ({ title, containerStyles }) => {
+const AnimatedButton = ({ title, containerStyles,onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [textWidth, setTextWidth] = useState(0);
   const arrowRef = useRef(null);
@@ -43,7 +43,7 @@ const AnimatedButton = ({ title, containerStyles }) => {
         role="button"
         tabIndex={0}
       >
-        <span
+        <button
           ref={aboutTextRef}
           className={
             `relative z-10 rounded-full px-6 py-2 text-sm font-semibold ${containerStyles}`
@@ -52,9 +52,10 @@ const AnimatedButton = ({ title, containerStyles }) => {
             color:"var(--button-text)",
             backgroundColor:"var(--button-bg)"
           }}
+          onClick={onClick}
         >
           {title}
-        </span>
+        </button>
         <div
           ref={arrowRef}
           className={clsx(
