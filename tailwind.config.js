@@ -13,11 +13,13 @@ module.exports = {
           "purple-light":"#BBA0FD",
           "black-grey":"#1B1B1B",
           "grey-ish": "#F0E8DB",
+          "blue-ish":"#e6e6fa"
         },
         neutral: {
           "black": "#1E1E1E",
           "white":"#FFFFFF",
           "grey":"#374151",
+          "light-grey": "#d1d5db"
         }
 
       },
