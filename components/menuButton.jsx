@@ -90,8 +90,11 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
               <Link
                 ref={(el) => (menuItemsRef.current[index] = el)}
                 key={index}
-                className="hidden opacity-0 text-gray-500 hover:text-gray-900 mx-[6px] transition-colors hover:font-semibold"
+                className="hidden opacity-0 hover:text-gray-900 mx-[6px] transition-colors hover:font-semibold"
                 href={item.href}
+                style={{
+                  color:"var(--button-text)",
+                }}
               >
                 {item.title}
               </Link>
@@ -111,7 +114,7 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
             backgroundColor:"var(--button-bg)"
           }}
         >
-          <ArrowLeft size={14} color="#111827" />
+          <ArrowLeft size={14} />
         </div>
       </div>
     </div>

@@ -26,6 +26,13 @@
   --button-text: #1E1E1E;
   --cursor-bg: #fc6492;
 }
+[data-theme="light-blue"]{
+  --bg-color: #DEDEDE; 
+  --text-color: #1E1E1E;
+  --button-bg: #1E1E1E;
+  --button-text: #FFFFFF;
+  --cursor-bg: #fc6492;
+}
 
 body {
   background-color: var(--bg-color);
