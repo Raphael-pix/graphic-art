@@ -75,37 +75,37 @@ const Footer = ({footerRef}) => {
             <div className="uppercase text-[10px] tracking-wide text-gray-700">
               Say Hello
             </div>
-            <a
+            <Link
               href="mailto:hello@serious.business"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
               hello <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
-            </a>
+            </Link>
           </div>
 
           <div className="space-y-2 mt-12 w-full lg:text-end">
             <div className="uppercase text-[10px] tracking-wide text-gray-700">
               Exceptional Talent?
             </div>
-            <a
+            <Link
               href="mailto:apply@serious.business"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
               apply  <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="mx-auto my-12 text-[10px] space-x-4 font-light lg:hidden">
-        <a href="#" className="hover:opacity-70 transition-opacity max-lg:underline">
+        <Link href="/imprint" className="hover:opacity-70 transition-opacity max-lg:underline">
           IMPRINT
-        </a>
-        <a href="#" className="hover:opacity-70 transition-opacity max-lg:underline">
+        </Link>
+        <Link href="/privacy" className="hover:opacity-70 transition-opacity max-lg:underline">
           PRIVACY
-        </a>
-        <a href="#" className="hover:opacity-70 transition-opacity max-lg:underline">
+        </Link>
+        <Link href="/press" className="hover:opacity-70 transition-opacity max-lg:underline">
           PRESS
-        </a>
+        </Link>
       </div>
       {/* Bottom Bar */}
       <div className="max-w-7xl w-full lg:pt-12 lg:mt-12 lg:px-8">
@@ -122,15 +122,15 @@ const Footer = ({footerRef}) => {
             München, Germany / Stockholm, Sweden
           </div>
           <div className="hidden text-[10px] space-x-4 font-light lg:block">
-            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
+            <Link href="/imprint" className="hover:opacity-70 hover:underline transition-opacity">
               IMPRINT
-            </a>
-            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
+            </Link>
+            <Link href="/privacy" className="hover:opacity-70 hover:underline transition-opacity">
               PRIVACY
-            </a>
-            <a href="#" className="hover:opacity-70 hover:underline transition-opacity">
+            </Link>
+            <Link href="/press" className="hover:opacity-70 hover:underline transition-opacity">
               PRESS
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import AnimatedTitle from "@/components/animatedTitle";
 import AnimatedButton from "@/components/animatedButton";
+import { useRouter } from "next/navigation";
 
 const facts = [
   {
@@ -23,11 +24,12 @@ const facts = [
 
 export default function About() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
+  const router = useRouter();
 
   const timerRef = useRef(null);
   const factNumberRef = useRef(null);
   const factContentRef = useRef(null);
-  const factCountRef = useRef(null); // For counting animation
+  const factCountRef = useRef(null); 
   const timelineRef = useRef(null);
 
   useEffect(() => {
@@ -175,7 +177,7 @@ export default function About() {
           {/* Heading */}
           <AnimatedTitle title="Crafting premium brands for startups that make people smile" />
           {/* About Button */}
-          <AnimatedButton title="About us" containerStyles="bg-white"/>
+          <AnimatedButton title="About us" containerStyles="bg-white" onClick={()=>router.push("/about")}/>
         </div>
       </div>
     </div>

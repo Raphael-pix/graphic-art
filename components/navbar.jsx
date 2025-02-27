@@ -6,6 +6,7 @@ import SmileyButton from "./smileyButton";
 import FlippingText from "./flippingText";
 import MenuButton from "./menuButton";
 import { X } from "lucide-react";
+import Link from "next/link";
 
 const NavBar = () => {
   const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
@@ -60,9 +61,9 @@ const NavBar = () => {
             <div className="text-4xl space-y-6 mb-auto">
               {menuItems.map((item) => (
                 <div key={item.title}>
-                  <a href={item.href} className="hover:opacity-70 transition-opacity">
+                  <Link href={item.href} className="hover:opacity-70 transition-opacity">
                     {item.title}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -71,16 +72,16 @@ const NavBar = () => {
             <div className="space-y-6 text-sm">
               <div>
                 <div className="text-gray-500 mb-1">SAY HELLO</div>
-                <a href={`mailto:${contactInfo.sayHello}`} className="underline">
+                <Link href={`mailto:${contactInfo.sayHello}`} className="underline">
                   {contactInfo.sayHello}
-                </a>
+                </Link>
               </div>
               
               <div>
                 <div className="text-gray-500 mb-1">EXCEPTIONAL TALENT?</div>
-                <a href={`mailto:${contactInfo.apply}`} className="underline">
+                <Link href={`mailto:${contactInfo.apply}`} className="underline">
                   {contactInfo.apply}
-                </a>
+                </Link>
               </div>
 
               <div className="text-gray-500">
