@@ -6,11 +6,11 @@
 
 
 :root {
-   --bg-color: #FFFFFF; 
-   --text-color: #1E1E1E;
-   --button-bg: #F9B8CB;
-   --button-text: #1E1E1E;
-   --cursor-bg: #fc6492;
+  --bg-color: #FFFFFF; 
+  --text-color: #1E1E1E;
+  --button-bg: #F9B8CB;
+  --button-text: #1E1E1E;
+  --cursor-bg: #fc6492;
 }
 [data-theme = "pink"]{
   --bg-color: #FBC1D4; 
@@ -26,13 +26,6 @@
   --button-text: #1E1E1E;
   --cursor-bg: #fc6492;
 }
-[data-theme="white"]{
-  --bg-color: #FFFFFF; 
-  --text-color: #1E1E1E;
-  --button-bg: #F9B8CB;
-  --button-text: #1E1E1E;
-  --cursor-bg: #fc6492;
-}
 [data-theme="light-blue"]{
   --bg-color: #DEDEDE; 
   --text-color: #1E1E1E;
@@ -44,8 +37,6 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  width: 100dvw;
-  overflow-x: hidden;
   font-family: "Cabin", serif;
 }
 .hidden-scrollbar {

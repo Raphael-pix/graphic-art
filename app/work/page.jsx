@@ -40,7 +40,7 @@ const WorkPage = () => {
     <main className="relative min-h-screen ">
       <NavBar />
       <Header navItems={navItems} handleItemClick={handleItemClick} />
-      <div>
+      <div className="overflow-hidden">
         {ActiveComponent}
       </div>
       <Footer />

@@ -25,7 +25,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen p-4 flex items-center justify-center lg:p-8">
+    <section className="min-h-screen overflow-hidden p-4 flex items-center justify-center lg:p-8">
       <div className="max-w-3xl mx-auto">
         {title.split("<br />").map((line, index) => (
           <div

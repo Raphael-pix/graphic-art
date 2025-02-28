@@ -22,7 +22,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="custom-cursor"
+      className="custom-cursor max-md:hidden"
       style={{
         translateX: smoothX,
         translateY: smoothY,

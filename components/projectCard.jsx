@@ -46,7 +46,7 @@ const ProjectCard = ({ project, index }) => {
             scrollTrigger: {
               trigger: el,
               start: "top 95%",
-              end: "top 10%",
+              end: "top 40%",
               scrub: 1,
             },
           }
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, index }) => {
       }}
       className="group relative flex flex-col"
     >
-      <div className="relative  max-h-[20rem] rounded-lg transition-transform">
+      <div className="relative max-h-[20rem] rounded-lg transition-transform">
         <Image
           src={project.image}
           alt={project.title}

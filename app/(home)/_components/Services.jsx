@@ -109,12 +109,12 @@ const Services = () => {
   }, [isLargeScreen]);
 
   return (
-    <div ref={containerRef} className="py-4">
+    <div ref={containerRef} className="overflow-x-hidden py-4">
       {/* Services Header */}
       <h2 className="text-3xl font-medium p-4 lg:p-6">Services</h2>
       <div
         ref={cardContinerRef}
-        className="relative z-50 w-screen overflow-hidden lg:max-h-[42rem]"
+        className="relative z-50 overflow-hidden lg:max-h-[42rem]"
       >
         {servicesData.map((item, i) => (
           <div
