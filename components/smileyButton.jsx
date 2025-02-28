@@ -4,9 +4,11 @@ import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import Button from "./button";
 import { Ellipsis } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
   const smileyRef = useRef(null);
+  const router = useRouter();
 
   const handleHover = (isEntering) => {
     if (smileyRef.current) {

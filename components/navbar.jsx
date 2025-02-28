@@ -26,8 +26,8 @@ const NavBar = () => {
   };
 
   return (
-    <div  className="sticky top-0 z-[1000] h-20 border-none transition-all duration-700 overflow-hidden lg:h-18">
-      <header className="z-[1001]">
+    <div  className="sticky top-0 z-[100] h-20 border-none transition-all duration-700 overflow-hidden lg:h-18">
+      <header className="z-[101]">
         <nav className="flex flex-row-reverse items-center justify-between px-4 lg:grid grid-cols-2 md:grid-cols-3  ">
           <SmileyButton setIsProjectFormOpen={setIsProjectFormOpen} setIsMobileMenuOpen={setIsMobileMenuOpen}/>
           <FlippingText/>

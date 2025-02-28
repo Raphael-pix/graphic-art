@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-export default function SmileyFace() {
+const SmileyFace = () => {
   const faceRef = useRef(null);
   const leftEyeRef = useRef(null);
   const rightEyeRef = useRef(null);
@@ -114,3 +114,26 @@ export default function SmileyFace() {
     </svg>
   );
 }
+
+export default SmileyFace;
+
+export const SmileySvg = () => {
+  return (
+    <svg
+      viewBox="0 0 115 115"
+      className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] md:w-[70px] md:h-[70px] lg:w-[100px] lg:h-[100px] xl:w-[115px] xl:h-[115px]"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      {/* Face Circle */}
+      <circle cx="60" cy="60" r="50" stroke="currentColor" strokeWidth="7" fill="none" />
+
+      {/* Eyes */}
+      <circle cx="45" cy="45" r="6" fill="currentColor" />
+      <circle cx="75" cy="45" r="6" fill="currentColor" />
+
+      {/* Mouth */}
+      <path d="M45 75 Q60 90 75 75" stroke="currentColor" strokeWidth="4" fill="transparent" />
+    </svg>
+  );
+};
