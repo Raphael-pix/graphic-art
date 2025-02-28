@@ -29,7 +29,7 @@ const Partners = ({ partner }) => {
   }, []);
 
   return (
-    <div className="py-16 mx-4 relative lg:mx-12">
+    <div className="overflow-hidden py-16 mx-4 relative lg:mx-12">
       {/* Animated Border */}
       <div
         ref={borderRef}

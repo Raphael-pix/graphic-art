@@ -5,10 +5,10 @@ export const CompanyName = () => {
   return (
     <svg
       viewBox="0 0 600 150"
-      width="100vw"
+      width="100%"
       height="120"
       xmlns="http://www.w3.org/2000/svg"
-      className="max-lg:hidden"
+      className="max-lg:hidden overflow-hidden"
     >
       
       {/* Text */}

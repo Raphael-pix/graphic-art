@@ -79,7 +79,7 @@ const Hero = () => {
   }, [isLargeScreen]);
 
   return (
-    <div ref={heroRef} id="hero" className="relative pb-8">
+    <div ref={heroRef} id="hero" className="overflow-hidden relative pb-8">
       <div className="relative min-h-screen">
         <div className="w-full flex items-center justify-center max-lg:h-screen max-lg:flex-col max-lg:gap-32">
           <EmbossedLogo />

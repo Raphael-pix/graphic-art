@@ -109,7 +109,7 @@ const Services = () => {
   }, [isLargeScreen]);
 
   return (
-    <div ref={containerRef} className="overflow-x-hidden py-4">
+    <div ref={containerRef} className="overflow-hidden py-4">
       {/* Services Header */}
       <h2 className="text-3xl font-medium p-4 lg:p-6">Services</h2>
       <div

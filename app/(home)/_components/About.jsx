@@ -115,7 +115,7 @@ export default function About() {
   };
 
   return (
-    <div className="px-6 py-4 relative lg:px-12 lg:py-16">
+    <div className="overflow-hidden px-6 py-4 relative lg:px-12 lg:py-16">
       <div className="flex flex-col items-start gap-8 lg:gap-16 lg:flex-row">
         {/* Facts Section */}
         <div className="w-full max-w-md lg:w-[20%]">

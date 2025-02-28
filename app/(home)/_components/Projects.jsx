@@ -5,7 +5,7 @@ import { projects } from "@/constants";
 export default function Projects() {
 
   return (
-    <section className="py-4">
+    <section className="overflow-hidden py-4">
       <div className="mb-12 flex items-center justify-center">
       <AnimatedTitle
         title="Europe's most aspiring <br /> startups and scaleups"
