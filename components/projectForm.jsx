@@ -70,10 +70,10 @@ const ProjectForm = ({ isOpen, onClose }) => {
     <motion.button
       type="button"
       onClick={() => handleButtonToggle(field, value)}
-      className={`px-4 py-2 text-sm font-light rounded-full border transition-colors relative hover:border-black duration-300 ${
+      className={`px-4 py-2 text-sm font-light rounded-full border transition-colors relative hover:border-neutral-black  duration-300 ${
         currentValue === value
-          ?  'bg-black text-white'
-          : 'border-gray-200 hover:border-gray-300'
+          ?  'bg-neutral-black text-neutral-white'
+          : 'border-neutral-light-grey hover:border-neutral-light-grey'
       }`}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.1 }}
@@ -118,7 +118,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <h2 className="text-xl mb-4 font-standard text-gray-800">What can we do for you?</h2>
+                    <h2 className="text-xl mb-4 font-standard">What can we do for you?</h2>
                     <div className="flex flex-wrap gap-3">
                       {projectTypes.map((type) => (
                           <SelectButton
@@ -132,7 +132,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                   </div>
 
                   <div>
-                    <h2 className="text-xl mb-4 font-standard text-gray-800">Do you have a budget range?</h2>
+                    <h2 className="text-xl mb-4 font-standard">Do you have a budget range?</h2>
                     <div className="flex flex-wrap gap-3">
                       {budgetRanges.map((range) => (
                           <SelectButton
@@ -146,7 +146,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                   </div>
 
                   <div>
-                    <h2 className="text-xl mb-4 font-standard text-gray-800">Your information</h2>
+                    <h2 className="text-xl mb-4 font-standard">Your information</h2>
                     <div className="space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input
@@ -155,7 +155,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                           placeholder="Your name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2 rounded-full border border-gray-200 placeholder-shown:font-light focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                          className="w-full px-4 py-2 rounded-full border border-neutral-light-grey placeholder-shown:font-light focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
                         />
                         <input
                           type="email"
@@ -163,7 +163,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                           placeholder="Your email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-2 rounded-full border border-gray-200 placeholder-shown:font-light  focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                          className="w-full px-4 py-2 rounded-full border border-neutral-light-grey placeholder-shown:font-light  focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
                         />
                       </div>
                       <textarea
@@ -172,17 +172,17 @@ const ProjectForm = ({ isOpen, onClose }) => {
                         value={formData.description}
                         onChange={handleInputChange}
                         rows={6}
-                        className="w-full px-4 py-3 rounded-2xl border border-gray-200 placeholder-shown:font-light  focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                        className="w-full px-4 py-3 rounded-2xl border border-neutral-light-grey placeholder-shown:font-light  focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
                       />
                     </div>
                   </div>
 
-                  <button
+                  <div
                     type="submit"
                     className="bg-white rounded-full flex justify-end ml-auto"
                   >
-                    <AnimatedButton title={"submit"} containerStyles="bg-pink-300 text-black"/>
-                  </button>
+                    <AnimatedButton title={"submit"} containerStyles="bg-pink-300 text-black" />
+                  </div>
                 </form>
               </div>
             </div>
@@ -198,12 +198,12 @@ const ProjectForm = ({ isOpen, onClose }) => {
                 transition={{ duration: 0.2 }}
                 className="fixed mx-4 inset-0 z-[1003] flex items-center justify-end p-4 lg:mr-8"
               >
-                <div className="bg-white rounded-2xl p-6 pt-16 max-w-sm h-[20rem] w-full shadow-lg flex flex-col items-center justify-between">
+                <div className="bg-neutral-white rounded-2xl p-6 pt-16 max-w-sm h-[20rem] w-full shadow-lg flex flex-col items-center justify-between">
                   <h2 className="text-4xl font-semibold mx-auto text-center">Forgot to press Submit?</h2>
                   <div className="flex justify-end space-x-4">
                     <button
                       onClick={() => setShowModal(false)}
-                      className="px-6 py-2 rounded-full font-semibold"
+                      className="px-6 py-2 rounded-full font-semibold max-md:text-sm"
                     >
                       Back to form
                     </button>
@@ -213,7 +213,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
                         setIsDirty(false);
                         onClose();
                       }}
-                      className="px-6 py-2 rounded-full  text-black font-semibold"
+                      className="px-4 py-2 rounded-full font-semibold max-md:text-sm md:px-6 md:py-2"
                     >
                       Close anyway
                     </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navbar";
 import Header from "./_componets/Header";
@@ -35,11 +35,6 @@ const WorkPage = () => {
   
   // Get the active component
   const ActiveComponent = tabComponents[activeTab] || <FeaturedLlist />;
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme"); // Cleanup when leaving
-  }, []);
 
   return (
     <main className="relative min-h-screen ">

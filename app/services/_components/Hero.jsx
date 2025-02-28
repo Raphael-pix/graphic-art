@@ -30,12 +30,12 @@ const HeroSection = () => {
         {title.split("<br />").map((line, index) => (
           <div
             key={index}
-            className="text-start flex justify-start w-full flex-wrap gap-2  md:gap-3"
+            className="text-center flex justify-center w-full flex-wrap gap-2 md:text-start md:justify-start md:gap-3"
           >
             {line.split(" ").map((word, idx) => (
               <span
                 key={idx}
-                className="animated-text text-3xl font-bold opacity-0 md:text-4xl lg:text-6xl"
+                className="animated-text text-5xl font-bold opacity-0 md:text-4xl lg:text-6xl"
                 dangerouslySetInnerHTML={{ __html: word }}
               />
             ))}

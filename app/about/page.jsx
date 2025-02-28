@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navbar";
 import HeroSection from "./_components/Hero";
@@ -10,11 +8,6 @@ import DisplaySection from "./_components/display";
 import TeamMembersSection from "./_components/members";
 
 const AboutPage = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme");
-  }, []);
-
   return (
     <main className="relative min-h-screen">
       <CustomCursor/>

@@ -12,29 +12,14 @@ const VideoSection = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const animationRef = useRef(null);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+  gsap.registerPlugin(ScrollTrigger);
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
-  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play();
     }
 
-    if (isLargeScreen) {
       animationRef.current = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -61,19 +46,16 @@ const VideoSection = () => {
         },
         0
       );
-    } else {
-      animationRef.current?.kill();
-    }
 
     return () => animationRef.current?.kill();
-  }, [isLargeScreen]);
+  }, []);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen p-16 flex items-center justify-center">
-      <div className="relative w-full lg:h-screen flex items-center justify-center">
+    <div ref={containerRef} className="relative h-[40vh] flex items-center justify-center md:p-16 md:min-h-screen">
+      <div className="relative w-full h-full flex items-center justify-center md:h-screen">
         <div
           ref={videoContainerRef}
-          className="w-full h-full rounded-lg flex items-center justify-center"
+          className="w-full h-full flex items-center justify-center md:rounded-lg"
         >
           <video
             ref={videoRef}
@@ -82,7 +64,7 @@ const VideoSection = () => {
             muted
             loop
             src="/assets/videos/hero-video.mp4"
-            className="absolute inset-0 rounded-lg"
+            className="absolute inset-0 md:rounded-lg"
           ></video>
         </div>
       </div>

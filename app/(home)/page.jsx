@@ -1,8 +1,8 @@
-import React from "react";
+"use client"
+
+import React, { useEffect } from "react";
 import { CompanyName } from "@/components/companyName";
 import NavBar from "@/components/navbar";
-import Footer from "@/components/Footer";
-import Trending from "./_components/Trending";
 import Projects from "./_components/Projects";
 import Services from "./_components/Services";
 import About from "./_components/About";
@@ -12,6 +12,10 @@ import CustomCursor from "@/components/customCursor";
 // import IntroSequence from "./_components/Intro-sequence";
 
 export default function Home() {
+    useEffect(() => {
+      document.documentElement.setAttribute("data-theme", "pink");
+      return () => document.documentElement.removeAttribute("data-theme");
+    }, []);
   return (
     <main className="relative min-h-screen">
       <CustomCursor/>

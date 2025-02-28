@@ -6,6 +6,13 @@
 
 
 :root {
+   --bg-color: #FFFFFF; 
+   --text-color: #1E1E1E;
+   --button-bg: #F9B8CB;
+   --button-text: #1E1E1E;
+   --cursor-bg: #fc6492;
+}
+[data-theme = "pink"]{
   --bg-color: #FBC1D4; 
   --text-color: #1E1E1E;
   --button-bg: #FFFFFF;

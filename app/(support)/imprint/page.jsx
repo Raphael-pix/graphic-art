@@ -1,14 +1,8 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navbar";
-import React, { useEffect } from "react";
+import React from "react";
 
 const ImprintPage = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme");
-  }, []);
   return (
     <main className="relative min-h-screen ">
       <NavBar />

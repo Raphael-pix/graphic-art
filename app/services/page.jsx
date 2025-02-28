@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useEffect } from 'react'
+import React from 'react'
 import Footer from '@/components/Footer';
 import NavBar from '@/components/navbar';
 import HeroSection from './_components/Hero';
@@ -14,12 +12,6 @@ import TestimonialsSection from './_components/Testimonials';
 import BrandsSection from './_components/Brands';
 
 const ServicesPage = () => {
-
-  useEffect(()=>{
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme");
-  })
-
   return (
     <main className="relative min-h-screen">
       <CustomCursor/>

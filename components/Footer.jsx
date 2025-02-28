@@ -25,7 +25,7 @@ const Footer = ({footerRef}) => {
       className="px-4 py-4 min-h-[80vh] flex flex-col lg:px-8"
     >
       <Promotion />
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col gap-6 items-start justify-between lg:flex-row lg:mt-8">
+      <div className="mx-auto w-full flex-1 flex flex-col gap-6 items-start justify-between lg:flex-row lg:mt-8">
         <div className="grid grid-col-1 md:grid-cols-2 gap-8 lg:gap-6">
           {/* Left Column - Explore */}
           <div className="flex items-start gap-6">
@@ -79,7 +79,7 @@ const Footer = ({footerRef}) => {
               href="mailto:hello@serious.business"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
-              hello <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
+              hello <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> graphiq.art
             </Link>
           </div>
 
@@ -91,7 +91,7 @@ const Footer = ({footerRef}) => {
               href="mailto:apply@serious.business"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
-              apply  <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> serious.business
+              apply  <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> graphiq.art
             </Link>
           </div>
         </div>
@@ -108,7 +108,7 @@ const Footer = ({footerRef}) => {
         </Link>
       </div>
       {/* Bottom Bar */}
-      <div className="max-w-7xl w-full lg:pt-12 lg:mt-12 lg:px-8">
+      <div className="w-full lg:pt-12 lg:mt-12 lg:px-8">
         <div className="text-[2rem] font-medium mb-2 text-center lg:text-[124px]">
           <span>GRAPHIQ</span>{" "}
           <span className="inline-block">

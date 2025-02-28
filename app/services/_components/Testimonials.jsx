@@ -114,7 +114,7 @@ const TestimonialsSection = () => {
   return (
     <div className="px-6 py-12 lg:px-24 lg:py-24">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/3">
+        <div className=" w-full flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/3">
 
           <div className="w-full flex justify-between items-center border-b pb-2 border-gray-300">
             <h1 className="text-xs font-medium uppercase text-gray-700 tracking-wide">

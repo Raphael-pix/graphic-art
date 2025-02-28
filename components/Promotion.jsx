@@ -42,7 +42,7 @@ const Promotion = () => {
     
   return (
     <div className="py-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <PromotionCard
             title="Let's work"

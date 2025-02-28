@@ -1,14 +1,10 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navbar";
-import React, { useEffect } from "react";
+import React from "react";
+import "iconify-icon"
+import Link from "next/link";
 
 const PrivacyPage = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme");
-  }, []);
   return (
     <main className="relative min-h-screen ">
       <NavBar />
@@ -27,17 +23,17 @@ const PrivacyPage = () => {
           </h2>
 
           <p className="text-xl mb-8">
-            Serious Business GmbH Leopoldstr. 31 80802 München Germany
+            Graphiq Art GmbH Leopoldstr. 31 80802 München Germany
           </p>
 
           <p className="text-xl mb-20">
             Owner contact email:{" "}
-            <a
-              href="mailto:hello@serious.business"
-              className="underline hover:text-neutral-grey transition-colors"
+            <Link
+              href="mailto:hello@graphiq.art"
+              className="underline hover:text-neutral-grey transition-colors flex items-center"
             >
-              hello@serious.business
-            </a>
+              hello<iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon>graphiq.art
+            </Link>
           </p>
 
           <h2 className="text-4xl font-normal mb-12">

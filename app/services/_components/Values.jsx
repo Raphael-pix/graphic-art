@@ -78,15 +78,15 @@ const ValuesSection = () => {
         in numbers
       </h1>
       <div className="mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-secondary-blue-ish p-6 rounded-lg flex flex-col h-[24rem]"
+              className="bg-secondary-blue-ish p-6 rounded-lg flex flex-col h-[20rem] md:h-[24rem]"
             >
               <h2
                 ref={(el) => (metricRefs.current[index] = el)}
-                className="text-6xl md:text-7xl font-bold mb-10"
+                className="text-5xl md:text-7xl font-bold mb-10"
               >
                 {metric.value}
               </h2>

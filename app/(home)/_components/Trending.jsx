@@ -52,6 +52,7 @@ export default function Trending({trendingRef}) {
               title={item.title}
               category={item.category}
               isSmaller={index === 1}
+              index={index}
             />
           ))}
         </div>

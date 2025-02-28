@@ -66,7 +66,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="simple-icons:asus"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -76,7 +76,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="meteor-icons:google"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -86,7 +86,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="icon-park-outline:volkswagen"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -96,7 +96,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="simple-icons:mercedes"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -106,7 +106,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="mdi:microsoft-xbox"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -116,7 +116,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="ri:tiktok-line"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -126,7 +126,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="simple-icons:dell"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -136,7 +136,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="arcticons:cloud-mimedia"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -152,7 +152,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="mingcute:behance-line"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -167,7 +167,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="la:dribbble-square"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -183,7 +183,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="solar:figma-bold"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -194,7 +194,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="simple-icons:awwwards"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -205,7 +205,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="dashicons:awards"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),
@@ -220,7 +220,7 @@ export const partnerItems = [
         logo: (
           <iconify-icon
             icon="simple-icons:cssdesignawards"
-            width="10vw"
+            width="7vw"
             height="10vh"
           ></iconify-icon>
         ),

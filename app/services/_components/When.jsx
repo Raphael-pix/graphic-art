@@ -25,10 +25,10 @@ const WhenSection = () => {
     },
   ];
   return (
-    <section className="overflow-hidden min-h-screen p-8">
+    <section className="overflow-hidden min-h-screen px-4 py-4 md:p-8">
       <div className="flex flex-col gap-16 lg:flex-row">
-        <div className="p-8 max-w-md">
-          <h1 className="text-sm font-semibold mb-6">When?</h1>
+        <div className="max-w-md max-md:border-t max-md:border-neutral-light-grey py-4 md:p-8">
+          <h1 className="text-xl font-semibold mb-6 md:text-sm">When?</h1>
           <p className="text-2xl font-serif">
             Post-seed, post-launch or getting ready for the next big step, we do
             branding for startups at any stage of the journey
@@ -38,16 +38,22 @@ const WhenSection = () => {
           {stages.map((stage) => (
             <div
               key={stage.title}
-              className="group flex flex-col justify-between relative p-8 rounded-md hover:bg-primary-pink"
+              className="group flex flex-col justify-between relative py-4 md:p-8 hover:md:bg-primary-pink md:rounded-md max-md:border-t max-md:border-neutral-light-grey"
             >
               <div className="mb-2">
                 <h1 className="text-3xl font-semibold mb-4">{stage.title}</h1>
-                <p className="text-base">{stage.description}</p>
+                <div className="flex items-center justify-between gap-8">
+                  <p className="text-lg md:text-base">{stage.description}</p>
+                  <div>
+                    <div className="w-12 h-12 rounded-full bg-primary-pink flex items-center justify-center md:hidden">
+                      <CornerDownRight size={20} color="#1E1E1E" />
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div 
-              className="w-full flex justify-end opacity-0 translate-x-10 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                <div className="w-8 h-8 rounded-full bg-neutral-white flex items-center justify-center">
+              <div className="w-full hidden md:flex justify-end md:opacity-0 md:translate-x-10 group-hover:md:opacity-100 group-hover:md:translate-x-0 transition-all md:duration-500">
+                <div className="w-8 h-8 rounded-full bg-primary-pink flex items-center justify-center md:bg-neutral-white">
                   <CornerDownRight size={16} color="#1E1E1E" />
                 </div>
               </div>

@@ -43,13 +43,13 @@ const Partners = ({ partner }) => {
           </h2>
         </div>
 
-        <div className={clsx('grid grid-cols-4 gap-x-12 gap-y-2 mx-auto lg:gap-x-24 lg:gap-y-16 lg:max-w-2xl lg:ml-auto ', partner.hasAchievements ? "grid-cols-3" : "")}>
+        <div className={clsx('grid grid-cols-4 gap-x-12 gap-y-2 mx-auto lg:gap-x-24 lg:gap-y-16 lg:max-w-2xl lg:ml-auto ', partner.hasAchievements && "grid-cols-3" )}>
           {partner.items.map((partner, index) => (
             <div
               key={index}
-              className="flex flex-col gap-1 justify-start opacity-80 hover:opacity-100 transition-opacity duration-300 lg:gap-4"
+              className="flex flex-col gap-1 items-start opacity-80 hover:opacity-100 transition-opacity duration-300 lg:gap-4"
             >
-             {partner.logo}
+             <div className="mx-auto">{partner.logo}</div>
 
               {partner.achievements && (
                 <div className="space-y-1">

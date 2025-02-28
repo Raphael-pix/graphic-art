@@ -12,6 +12,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
     if (smileyRef.current) {
       gsap.to(smileyRef.current, {
         x: isEntering ? "100%" : "-100%",
+        opacity:isEntering ? 100 : 0,
         rotation: isEntering ? 360 : -360, 
         duration: 1,
         ease: "power2.inOut",
@@ -64,7 +65,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
 
       <Button
        id="menu-button"
-       title={<Ellipsis size={18} color="#111111"/>}
+       title={<Ellipsis size={18}/>}
        containerClass="flex items-center justify-center p-2 lg:hidden"
        onClick={()=>setIsMobileMenuOpen(true)}
       />

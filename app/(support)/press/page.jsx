@@ -1,15 +1,9 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import NavBar from "@/components/navbar";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 
 const PressPage = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "white");
-    return () => document.documentElement.removeAttribute("data-theme");
-  }, []);
   return (
     <main className="relative min-h-screen ">
       <NavBar />
@@ -40,9 +34,9 @@ const PressPage = () => {
             Amadeus Estifanos |{" "}
             <a
               href="mailto:amadeus@graphiq.art"
-              className="underline hover:text-neutral-grey transition-colors"
+              className="underline hover:text-neutral-grey transition-colors flex items-center"
             >
-              amadeus@graphiq.art
+              amadeus<iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon>graphiq.art
             </a>
           </p>
         </section>

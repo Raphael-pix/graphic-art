@@ -8,6 +8,14 @@ import Trending from "./Trending";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const debounce = (func, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), delay);
+  };
+};
+
 const BottomSection = () => {
   const trendingRef = useRef(null);
   const footerRef = useRef(null);
@@ -15,28 +23,28 @@ const BottomSection = () => {
   useEffect(() => {
     if (!trendingRef.current || !footerRef.current) return;
 
+    const setTheme = debounce((theme) => {
+      document.documentElement.setAttribute("data-theme", theme);
+    }, 100); // Small delay to prevent flickering
+
     ScrollTrigger.create({
       trigger: trendingRef.current,
       start: "top 40%",
-      end: "bottom 80%",
-      scrub: true,
-      duration: 0.5,
-      ease:"power2.Out",
-      onEnter: () => document.documentElement.setAttribute("data-theme", "dark"),
-      onEnterBack: () => document.documentElement.setAttribute("data-theme", "dark"),
-      onLeave: () => document.documentElement.setAttribute("data-theme", "light"),
-      onLeaveBack: () => document.documentElement.setAttribute("data-theme", "light"),
+      end: "bottom 60%", // Reduced overlap
+      scrub: 1,
+      onEnter: () => setTheme("dark"),
+      onEnterBack: () => setTheme("dark"),
+      onLeave: () => setTheme("pink"),
+      onLeaveBack: () => setTheme("pink"),
     });
 
     ScrollTrigger.create({
       trigger: footerRef.current,
-      start: "top 10%",
-      end: "bottom 90%",
-      scrub: true,
-      duration: 0.5,
-      ease:"power2.Out",
-      onEnter: () => document.documentElement.setAttribute("data-theme", "light"),
-      onEnterBack: () => document.documentElement.setAttribute("data-theme", "light"),
+      start: "top 90%", // Trigger later to avoid overlap
+      end: "bottom 100%",
+      scrub: 1,
+      onEnter: () => setTheme("pink"),
+      onEnterBack: () => setTheme("pink"),
     });
 
     return () => {
