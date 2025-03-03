@@ -66,7 +66,7 @@ const BlogCard = ({ project, index }) => {
     >
       <div className="relative min-h-[14rem] rounded-lg transition-transform">
         <Image
-          src={project.image}
+          src={project.mainImage}
           alt={project.title}
           className="w-full h-full object-cover rounded-lg"
           width={250}

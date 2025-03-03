@@ -1,9 +1,27 @@
+"use client"
+
 import AnimatedTitle from "@/components/animatedTitle";
 import ProjectCard from "@/components/projectCard";
-import { projects } from "@/constants";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
 
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data)
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 300); // Small delay to ensure the layout is stable
+      }
+    );
+  }, []);
   return (
     <section className="overflow-hidden py-4">
       <div className="mb-12 flex items-center justify-center">

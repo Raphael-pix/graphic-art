@@ -117,7 +117,7 @@ const SmileyFace = () => {
 
 export default SmileyFace;
 
-export const SmileySvg = () => {
+export const SmileySvg = ({color}) => {
   return (
     <svg
       viewBox="0 0 115 115"
@@ -126,14 +126,14 @@ export const SmileySvg = () => {
       preserveAspectRatio="xMidYMid meet"
     >
       {/* Face Circle */}
-      <circle cx="60" cy="60" r="50" stroke="currentColor" strokeWidth="7" fill="none" />
+      <circle cx="60" cy="60" r="50" stroke={color} strokeWidth="7" fill="none" />
 
       {/* Eyes */}
-      <circle cx="45" cy="45" r="6" fill="currentColor" />
-      <circle cx="75" cy="45" r="6" fill="currentColor" />
+      <circle cx="45" cy="45" r="6" fill={color} />
+      <circle cx="75" cy="45" r="6" fill={color} />
 
       {/* Mouth */}
-      <path d="M45 75 Q60 90 75 75" stroke="currentColor" strokeWidth="4" fill="transparent" />
+      <path d="M45 75 Q60 90 75 75" stroke={color} strokeWidth="4" fill="transparent" />
     </svg>
   );
 };

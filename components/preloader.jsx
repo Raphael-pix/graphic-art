@@ -73,7 +73,8 @@ export default function Preloader() {
     // Scale down smiley face into a black dot and move preloader up
     timelineRef.current
       .to(smiley, {
-        scale: 0.3, // Scale down to a dot
+        scale: 0.2, // Scale down to a dot
+        y:"30%", //move the dot down
         backgroundColor: "black", // Change to a black dot
         borderRadius: "50%", // Ensure it's a perfect circle
         duration: 1, // Duration of scaling
@@ -110,7 +111,7 @@ export default function Preloader() {
           className="absolute left-[6%] text-[10vw] font-bold font-outfit md:left-[8%]"
         >
           {"GRAPHIQ".split("").map((char, idx) => (
-            <span key={idx} className="inline-block opacity-0">
+            <span key={idx} className="inline-block opacity-0 text-neutral-black">
               {char}
             </span>
           ))}
@@ -121,7 +122,7 @@ export default function Preloader() {
           className="absolute text-[10vw]"
           style={{ transform: "translateX(-100%)" }}
         >
-          <SmileySvg />
+          <SmileySvg color=" #1e1e1e" />
         </div>
 
         <div
@@ -129,7 +130,7 @@ export default function Preloader() {
           className="absolute right-[13%] text-[10vw] font-bold font-outfit md:right-[16%]"
         >
           {"ART".split("").map((char, idx) => (
-            <span key={idx} className="inline-block opacity-0">
+            <span key={idx} className="inline-block opacity-0 text-neutral-black">
               {char}
             </span>
           ))}

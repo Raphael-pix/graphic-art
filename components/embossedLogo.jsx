@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const EmbossedLogo = ({ text = "SB", color = "primary-pink" }) => {
+const EmbossedLogo = ({ text = "GA", color = "primary-pink" }) => {
   const containerRef = useRef(null);
   const shadowRef = useRef(null);
 

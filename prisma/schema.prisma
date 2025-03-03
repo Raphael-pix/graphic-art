@@ -1,0 +1,75 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Project {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  title       String
+  description String
+  mainImage   String
+  images      String[]
+  industry    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   @@map("projects")
+}
+
+model member {
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  title         String
+  bio           String
+  profileImage  String?
+  personalVideo String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   @@map("members")
+}
+
+model blogPost {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  Author      String[]
+  description String
+  text        String
+  media       String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   @@map("blogs")
+}
+
+model testimonial {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  title        String[]
+  text         String
+  profilePhoto String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   @@map("testimonials")
+}
+
+model partner {
+  id    String   @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  logos String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+   @@map("partners")
+}

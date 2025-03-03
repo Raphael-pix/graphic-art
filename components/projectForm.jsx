@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
 import AnimatedButton from "./animatedButton";
+import { toast } from "sonner";
 
 const ProjectForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -17,43 +17,21 @@ const ProjectForm = ({ isOpen, onClose }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
-  const router = useRouter(); // Router for updating URL
 
-  // Handle URL hash change and open form if #contact is in URL
-  useEffect(() => {
-    if (window.location.hash === "#contact") {
-      onClose(true);
-    }
-
-    const handleHashChange = () => {
-      if (window.location.hash === "#contact") {
-        onClose(true);
-      }
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      router.replace("#contact"); // Update URL
-    } else {
-      document.body.style.overflow = "unset";
-      if (window.location.hash === "#contact") {
-        router.replace("/"); // Remove hash when closing
-      }
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
-  const projectTypes = ["Brand Strategy", "Identity", "Website", "Product design", "Other"];
-  const budgetRanges = ["Under 10k", "€10k-€20k", "€20k-€50k", "€50k-€100k", "€100k+"];
+  const projectTypes = [
+    "Brand Strategy",
+    "Identity",
+    "Website",
+    "Product design",
+    "Other",
+  ];
+  const budgetRanges = [
+    "Under 10k",
+    "€10k-€20k",
+    "€20k-€50k",
+    "€50k-€100k",
+    "€100k+",
+  ];
 
   const handleButtonToggle = (field, value) => {
     setFormData((prev) => ({
@@ -63,24 +41,51 @@ const ProjectForm = ({ isOpen, onClose }) => {
     setIsDirty(true);
   };
 
+  const handleClose = () => {
+    if (isDirty) {
+      setShowModal(true);
+    } else {
+      setFormData({
+        projectType: "",
+        budget: "",
+        name: "",
+        email: "",
+        description: "",
+      });
+      onClose();
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setIsDirty(true);
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setIsDirty(false);
-    onClose();
-  };
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-  const handleClose = () => {
-    if (isDirty) {
-      setShowModal(true);
-    } else {
-      onClose();
+      if (response.ok) {
+        toast.success("Email sent successfully");
+        setIsDirty(false);
+        onClose();
+        setFormData({
+          projectType: "",
+          budget: "",
+          name: "",
+          email: "",
+          description: "",
+        });
+      } else {
+        toast.error("Unable to send email, please try again.");
+      }
+    } catch (error) {
+      console.error("Request failed", error);
     }
   };
 
@@ -89,7 +94,9 @@ const ProjectForm = ({ isOpen, onClose }) => {
       type="button"
       onClick={() => handleButtonToggle(field, value)}
       className={`px-4 py-2 text-sm font-light rounded-full border transition-colors relative hover:border-neutral-black duration-300 ${
-        currentValue === value ? "bg-neutral-black text-neutral-white" : "border-neutral-light-grey hover:border-neutral-light-grey"
+        currentValue === value
+          ? "bg-neutral-black text-neutral-white"
+          : "bg-neutral-white text-neutral-black border-neutral-light-grey hover:border-neutral-black"
       }`}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.1 }}
@@ -102,7 +109,6 @@ const ProjectForm = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -112,7 +118,6 @@ const ProjectForm = ({ isOpen, onClose }) => {
             onClick={handleClose}
           />
 
-          {/* Form */}
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
@@ -123,44 +128,89 @@ const ProjectForm = ({ isOpen, onClose }) => {
             <div className="min-h-screen p-8">
               <div className="max-w-2xl mx-auto">
                 <div className="flex justify-between items-center mb-8">
-                  <h1 className="text-4xl font-bold lg:text-5xl">Start a project</h1>
-                  <button onClick={handleClose} className="block p-2 bg-pink-300 rounded-full transition-colors lg:hidden">
+                  <h1 className="text-4xl font-bold lg:text-5xl">
+                    Start a project
+                  </h1>
+                  <button
+                    onClick={handleClose}
+                    className="block p-2 bg-primary-pink rounded-full transition-colors lg:hidden"
+                  >
                     <X size={16} />
                   </button>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <h2 className="text-xl mb-4 font-standard">What can we do for you?</h2>
+                    <h2 className="text-xl mb-4 font-standard">
+                      What can we do for you?
+                    </h2>
                     <div className="flex flex-wrap gap-3">
                       {projectTypes.map((type) => (
-                        <SelectButton key={type} field="projectType" value={type} currentValue={formData.projectType} />
+                        <SelectButton
+                          key={type}
+                          field="projectType"
+                          value={type}
+                          currentValue={formData.projectType}
+                        />
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <h2 className="text-xl mb-4 font-standard">Do you have a budget range?</h2>
+                    <h2 className="text-xl mb-4 font-standard">
+                      Do you have a budget range?
+                    </h2>
                     <div className="flex flex-wrap gap-3">
                       {budgetRanges.map((range) => (
-                        <SelectButton key={range} field="budget" value={range} currentValue={formData.budget} />
+                        <SelectButton
+                          key={range}
+                          field="budget"
+                          value={range}
+                          currentValue={formData.budget}
+                        />
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <h2 className="text-xl mb-4 font-standard">Your information</h2>
+                    <h2 className="text-xl mb-4 font-standard">
+                      Your information
+                    </h2>
                     <div className="space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" name="name" placeholder="Your name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-2 rounded-full border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300" />
-                        <input type="email" name="email" placeholder="Your email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-2 rounded-full border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300" />
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Your name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-2 rounded-full border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Your email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-2 rounded-full border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                        />
                       </div>
-                      <textarea name="description" placeholder="Sell your dream!" value={formData.description} onChange={handleInputChange} rows={6} className="w-full px-4 py-3 rounded-2xl border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300" />
+                      <textarea
+                        name="description"
+                        placeholder="Sell your dream!"
+                        value={formData.description}
+                        onChange={handleInputChange}
+                        rows={6}
+                        className="w-full px-4 py-3 rounded-2xl border border-neutral-light-grey focus:outline-none focus:border-black hover:border-black transition-colors duration-300"
+                      />
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-full flex justify-end ml-auto">
-                    <AnimatedButton title="Submit" containerStyles="bg-pink-300 text-black" />
+                  <div className="rounded-full flex justify-end ml-auto">
+                    <AnimatedButton
+                      title="Submit"
+                      containerStyles="custom-button"
+                    />
                   </div>
                 </form>
               </div>
@@ -172,10 +222,23 @@ const ProjectForm = ({ isOpen, onClose }) => {
             {showModal && (
               <motion.div className="fixed mx-4 inset-0 z-[1003] flex items-center justify-end p-4 lg:mr-8">
                 <div className="bg-neutral-white rounded-2xl p-6 pt-16 max-w-sm h-[20rem] w-full shadow-lg flex flex-col items-center justify-between">
-                  <h2 className="text-4xl font-semibold text-center">Forgot to press Submit?</h2>
+                  <h2 className="text-4xl font-semibold text-center">
+                    Forgot to press Submit?
+                  </h2>
                   <div className="flex justify-end space-x-4">
-                    <button onClick={() => setShowModal(false)}>Back to form</button>
-                    <button onClick={() => { setShowModal(false); setIsDirty(false); onClose(); }}>Close anyway</button>
+                    <button onClick={() => setShowModal(false)} className="bg-neutral-white">
+                      Back to form
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowModal(false);
+                        setIsDirty(false);
+                        handleClose();
+                      }}
+                      className="bg-neutral-white"
+                    >
+                      Close anyway
+                    </button>
                   </div>
                 </div>
               </motion.div>

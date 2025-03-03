@@ -116,5 +116,7 @@ body {
     transform-origin: center bottom;
     will-change: opacity, transform;
   }
-  
+  .custom-button {
+    @apply bg-primary-pink text-neutral-black !important;
+  }
 }

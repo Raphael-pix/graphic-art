@@ -76,7 +76,7 @@ const Footer = ({footerRef}) => {
               Say Hello
             </div>
             <Link
-              href="mailto:hello@serious.business"
+              href="mailto:hello@graphiq.art"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
               hello <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> graphiq.art
@@ -88,7 +88,7 @@ const Footer = ({footerRef}) => {
               Exceptional Talent?
             </div>
             <Link
-              href="mailto:apply@serious.business"
+              href="mailto:apply@graphiq.art"
               className="text-xl hover:opacity-70 transition-opacity flex items-center"
             >
               apply  <iconify-icon icon="mdi:at" width="18" height="18" ></iconify-icon> graphiq.art

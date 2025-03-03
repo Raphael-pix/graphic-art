@@ -65,7 +65,7 @@ const ProjectCard = ({ project, index }) => {
     >
       <div className="relative max-h-[20rem] rounded-lg transition-transform">
         <Image
-          src={project.image}
+          src={project.mainImage}
           alt={project.title}
           className="w-full h-full object-cover rounded-lg"
           width={250}
@@ -79,7 +79,7 @@ const ProjectCard = ({ project, index }) => {
     after:w-0 after:h-[2px] after:bg-[var(--text-color)] after:transition-all
     after:duration-700 group-hover:after:w-full"
         >
-          {project.name} | {project.title}{" "}
+          {project.title}{" "}
         </p>
         <p className="text-sm font-light">{project.description} </p>
       </div>

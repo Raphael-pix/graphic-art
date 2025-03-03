@@ -25,12 +25,12 @@ const BottomSection = () => {
 
     const setTheme = debounce((theme) => {
       document.documentElement.setAttribute("data-theme", theme);
-    }, 100); // Small delay to prevent flickering
+    }, 100);
 
     ScrollTrigger.create({
       trigger: trendingRef.current,
       start: "top 40%",
-      end: "bottom 60%", // Reduced overlap
+      end: "bottom 60%",
       scrub: 1,
       onEnter: () => setTheme("dark"),
       onEnterBack: () => setTheme("dark"),
@@ -40,7 +40,7 @@ const BottomSection = () => {
 
     ScrollTrigger.create({
       trigger: footerRef.current,
-      start: "top 90%", // Trigger later to avoid overlap
+      start: "top 90%",
       end: "bottom 100%",
       scrub: 1,
       onEnter: () => setTheme("pink"),
