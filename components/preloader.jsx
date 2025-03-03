@@ -12,12 +12,11 @@ export default function Preloader() {
   const timelineRef = useRef(null);
 
   useEffect(() => {
-    // Check if preloader has already run
     const hasVisited = sessionStorage.getItem("hasVisited");
 
     if (!hasVisited) {
       setShowPreloader(true);
-      sessionStorage.setItem("hasVisited", "true"); // Mark as visited
+      sessionStorage.setItem("hasVisited", "true"); 
     }
   }, []);
 
