@@ -18,7 +18,7 @@ export default function Projects() {
         setProjects(data)
         setTimeout(() => {
           ScrollTrigger.refresh();
-        }, 300); // Small delay to ensure the layout is stable
+        }, 300);
       }
     );
   }, []);

@@ -122,9 +122,14 @@ const TeamMembersSection = () => {
     
     // Function to update the active image
     function updateActiveImage(index) {
+      if (!imageContainerRef.current) return;
       // Hide all images
       const imageWrapper = imageContainerRef.current.querySelector('.image-wrapper');
+      
+      if (!imageWrapper) return;
       const images = imageWrapper.querySelectorAll('.team-image');
+      
+      if (images.length === 0) return;
       
       // Calculate the new position
       const position = -index * 100; // Each image is 100% height
@@ -140,11 +145,13 @@ const TeamMembersSection = () => {
     // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      imageContainerRef.current = null; // Ensure ref is cleared
     };
   }, []);
 
   // Update refs when team members change
   useEffect(() => {
+    if (!imageContainerRef.current) return;
     teamItemsRef.current = teamItemsRef.current.slice(0, teamMembers.length);
   }, [teamMembers]);
 

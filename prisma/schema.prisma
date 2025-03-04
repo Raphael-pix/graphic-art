@@ -19,7 +19,7 @@ model Project {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@map("projects")
+  @@map("projects")
 }
 
 model member {
@@ -33,34 +33,45 @@ model member {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@map("members")
+  @@map("members")
 }
 
 model blogPost {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  title       String
-  Author      String[]
-  description String
-  text        String
-  media       String[]
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  topic      String
+  readTime   Int
+  coverImage String
+  media      String[]
+
+  authorId String @db.ObjectId
+  author   Author @relation(fields: [authorId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@map("blogs")
+  @@map("blogs")
+}
+
+model Author {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  image String
+
+  blogs blogPost[]
 }
 
 model testimonial {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   name         String
-  title        String[]
+  title        String
   text         String
   profilePhoto String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@map("testimonials")
+  @@map("testimonials")
 }
 
 model partner {
@@ -71,5 +82,5 @@ model partner {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-   @@map("partners")
+  @@map("partners")
 }

@@ -16,28 +16,47 @@ const images = [
 
 // Smaller aspect ratios for images
 const aspectRatios = [
-  { width: 180, height: 120 },  // 3:2 landscape
-  { width: 150, height: 210 },  // 5:7 portrait
-  { width: 160, height: 160 },  // 1:1 square
-  { width: 200, height: 125 },  // 16:10 wide
-  { width: 140, height: 210 },  // 2:3 tall portrait
+  { width: 180, height: 120 }, // 3:2 landscape
+  { width: 150, height: 210 }, // 5:7 portrait
+  { width: 160, height: 160 }, // 1:1 square
+  { width: 200, height: 125 }, // 16:10 wide
+  { width: 140, height: 210 }, // 2:3 tall portrait
 ];
 
 const HeroSection = () => {
   const [trail, setTrail] = useState([]);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef([]);
-  const maxTrailLength = 10; // Slightly increased for smoother flow
+  const maxTrailLength = 10;
   const throttleRef = useRef(false);
 
+  // Check if screen is mobile
   useEffect(() => {
-    // Clear all timeouts on unmount
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Listen for resize events
+    window.addEventListener('resize', checkMobile);
+    
     return () => {
+      window.removeEventListener('resize', checkMobile);
+      // Clear all timeouts on unmount
       timeoutRef.current.forEach(timer => clearTimeout(timer));
     };
   }, []);
 
   useEffect(() => {
+    // Skip animation logic on mobile
+    if (isMobile) {
+      setTrail([]);
+      return;
+    }
+    
     // Track cursor position with smoother updates
     const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -115,34 +134,37 @@ const HeroSection = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [isMobile]);
+
 
   return (
     <div className="absolute top-0 left-0 w-full h-screen">
       <div className="relative w-full h-full p-4 flex flex-col items-center overflow-hidden lg:p-8">
-        <h1 className="text-[12vw] flex items-center gap-16 font-bold tracking-tight relative lg:text-[25vw]">
-          Est
-          <div className="w-18 absolute top-[60%] left-[30%] translate-x-1/2 p-4">
-            <Image
-              src="/assets/images/logo-3.svg"
-              width={18}
-              height={18}
-              alt="logo"
-              className="w-8 h-8 lg:w-16 lg:h-16 object-contain"
-            />
+        <div className="text-[40vw] flex h-full items-start justify-center flex-col font-bold tracking-tight relative lg:text-[25vw] lg:items-center lg:flex-row lg:gap-16">
+          <div className="relative">
+            Est
+            <div className="w-18 absolute top-[55%] -right-[12%] translate-x-1/2 p-4 lg:top-[60%] lg:-right-[7%]">
+              <Image
+                src="/assets/images/logo-3.svg"
+                width={18}
+                height={18}
+                alt="logo"
+                className="w-8 h-8 lg:w-16 lg:h-16 object-contain"
+              />
+            </div>
           </div>
-          <span className="inline-block">2015</span>
-        </h1>
-        
+          <span className="">2015</span>
+        </div>
+
         <div className="p-6 mx-auto text-center">
-          <p className="text-lg font-cabin font-semibold lg:text-2xl">
+          <p className="text-3xl font-cabin font-semibold lg:text-2xl">
             Crafting the future,
           </p>
-          <p className="text-lg font-serif lg:text-2xl">
+          <p className="text-3xl font-serif lg:text-2xl">
             while having serious fun
           </p>
         </div>
-        
+
         {/* Image trail */}
         {trail.map((img) => (
           <div

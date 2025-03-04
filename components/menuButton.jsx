@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import clsx from "clsx";
 import Link from "next/link";
 
-const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpen }) => {
+const MenuButton = ({ title = "Menu", menuItems, containerStyles }) => {
   const [textWidth, setTextWidth] = useState(0);
   const arrowRef = useRef(null);
   const titleRef = useRef(null);
@@ -53,7 +53,7 @@ const MenuButton = ({ title = "Menu", menuItems, containerStyles,isMobileMenuOpe
         duration: 0.5,
         display: isEntering ? "inline-block" : "none",
         ease: "power2.inOut",
-        stagger: 0.2,
+        stagger: -0.2,
       });
     }
   };

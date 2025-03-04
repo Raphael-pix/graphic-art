@@ -28,6 +28,7 @@ module.exports = {
         standard: ["Old Standard TT", "serif"],
         cabin:["Cabin", "serif"],
         tinos:["Tinos", "serif"],
+        kalnia: ["Kalnia", "serif"]
       },
     },
   },

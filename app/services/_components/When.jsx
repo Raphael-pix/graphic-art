@@ -1,25 +1,30 @@
 import { CornerDownRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const WhenSection = () => {
   const stages = [
     {
       title: "Sprint",
+      url:"/sprint",
       description:
         "Sprints are 1-month projects designed to create a brand or website quickly and efficiently for early-stage startups",
     },
     {
       title: "Branding Projects",
+      url:"/branding",
       description:
         "Our best seller; a comprehensive brand package aimed at elevating your business to the next level. Our holisitic approach to branding, reflecting our core expertise.",
     },
     {
       title: "Subscription",
+      url:"/subscription",
       description:
         "Subscriptions are our way of collaboraing long-term with clients, acting as their extended team to ensure brand consistency and growth.",
     },
     {
       title: "Venture",
+      url:"/venture",
       description:
         "Venture relationships invlove high-commitment where we invest our expertise and resources in exchange for shares.",
     },
@@ -36,9 +41,10 @@ const WhenSection = () => {
         </div>
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-x-8">
           {stages.map((stage) => (
-            <div
+            <Link
               key={stage.title}
               className="group flex flex-col justify-between relative py-4 md:p-8 hover:md:bg-primary-pink md:rounded-md max-md:border-t max-md:border-neutral-light-grey"
+              href={stage.url}
             >
               <div className="mb-2">
                 <h1 className="text-3xl font-semibold mb-4">{stage.title}</h1>
@@ -57,7 +63,7 @@ const WhenSection = () => {
                   <CornerDownRight size={16} color="#1E1E1E" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
