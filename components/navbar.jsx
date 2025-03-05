@@ -7,9 +7,10 @@ import FlippingText from "./flippingText";
 import MenuButton from "./menuButton";
 import { X } from "lucide-react";
 import Link from "next/link";
+import { useProjectForm } from "@/strore/useProjectForm";
 
 const NavBar = () => {
-  const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
+  const {isOpen,closeForm } = useProjectForm();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
@@ -29,10 +30,7 @@ const NavBar = () => {
     <div className="sticky top-0 z-[100] h-20 border-none transition-all duration-700 overflow-hidden lg:h-18">
       <header className="z-[101]">
         <nav className="flex flex-row-reverse items-center justify-between px-4 lg:grid grid-cols-2 md:grid-cols-3  ">
-          <SmileyButton
-            setIsProjectFormOpen={setIsProjectFormOpen}
-            setIsMobileMenuOpen={setIsMobileMenuOpen}
-          />
+          <SmileyButton/>
           <FlippingText />
           <MenuButton menuItems={menuItems} />
         </nav>
@@ -96,8 +94,8 @@ const NavBar = () => {
         </div>
       </div>
       <ProjectForm
-        isOpen={isProjectFormOpen}
-        onClose={() => setIsProjectFormOpen(false)}
+        isOpen={isOpen}
+        onClose={closeForm}
       />
     </div>
   );

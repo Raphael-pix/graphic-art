@@ -5,8 +5,9 @@ import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedButton from "./animatedButton";
 import { toast } from "sonner";
+import { useProjectForm } from "@/strore/useProjectForm";
 
-const ProjectForm = ({ isOpen, onClose }) => {
+const ProjectForm = () => {
   const [formData, setFormData] = useState({
     projectType: "",
     budget: "",
@@ -15,6 +16,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
     description: "",
   });
 
+  const { isOpen, closeForm } = useProjectForm();
   const [showModal, setShowModal] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
 
@@ -52,7 +54,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
         email: "",
         description: "",
       });
-      onClose();
+      closeForm();
     }
   };
 
@@ -73,7 +75,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
       if (response.ok) {
         toast.success("Email sent successfully");
         setIsDirty(false);
-        onClose();
+        closeForm();
         setFormData({
           projectType: "",
           budget: "",
@@ -123,7 +125,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "tween", duration: 0.5 }}
-            className="fixed inset-y-2 max-h-screen z-[1002] bg-white overflow-y-auto rounded-xl hidden-scrollbar lg:w-1/2 lg:left-2 max-lg:inset-x-4"
+            className="fixed inset-y-2 max-h-screen z-[1002] text-neutral-black  bg-neutral-white overflow-y-auto rounded-xl hidden-scrollbar lg:w-1/2 lg:left-2 max-lg:inset-x-4"
           >
             <div className="min-h-screen p-8">
               <div className="max-w-2xl mx-auto">
@@ -222,7 +224,7 @@ const ProjectForm = ({ isOpen, onClose }) => {
             {showModal && (
               <motion.div className="fixed mx-4 inset-0 z-[1003] flex items-center justify-end p-4 lg:mr-8">
                 <div className="bg-neutral-white rounded-2xl p-6 pt-16 max-w-sm h-[20rem] w-full shadow-lg flex flex-col items-center justify-between">
-                  <h2 className="text-4xl font-semibold text-center">
+                  <h2 className="text-4xl font-semibold text-neutral-black text-center">
                     Forgot to press Submit?
                   </h2>
                   <div className="flex justify-end space-x-4">

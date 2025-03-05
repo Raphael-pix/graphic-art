@@ -4,8 +4,10 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import Button from "./button";
 import { Ellipsis } from "lucide-react";
+import { useProjectForm } from "@/strore/useProjectForm";
 
-const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
+const SmileyButton = () => {
+  const {openForm} = useProjectForm();
   const smileyRef = useRef(null);
 
   const handleHover = (isEntering) => {
@@ -30,7 +32,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
         id="work-button"
         title="Let's work"
         containerClass="flex items-center justify-center gap-1 px-4 py-2"
-        onClick={() => setIsProjectFormOpen(true)}
+        onClick={openForm}
       />
       <div
         ref={smileyRef}
@@ -67,7 +69,7 @@ const SmileyButton = ({setIsProjectFormOpen,setIsMobileMenuOpen}) => {
        id="menu-button"
        title={<Ellipsis size={18}/>}
        containerClass="flex items-center justify-center p-2 lg:hidden"
-       onClick={()=>setIsMobileMenuOpen(true)}
+       onClick={openForm}
       />
     </div>
   );

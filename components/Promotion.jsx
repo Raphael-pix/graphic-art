@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useProjectForm } from "@/strore/useProjectForm";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const PromotionCard = ({
@@ -7,16 +10,16 @@ const PromotionCard = ({
   features = [],
   isDark = false,
   className = "",
-  link
+  onClick,
 }) => (
-  <Link
+  <div
     className={`
       p-8 rounded-xl flex flex-col justify-between min-h-[400px] 
       transition-transform duration-300 hover:scale-[1.02] cursor-pointer
       ${isDark ? "bg-zinc-900 text-white" : "bg-purple-200 text-zinc-900"}
       ${className}
     `}
-    href={link}
+    onClick={onClick}
   >
     <div>
       <div className="mb-4">
@@ -29,16 +32,18 @@ const PromotionCard = ({
       </div>
     </div>
     <div className="border-t border-current pt-6 mt-auto">
-        <div className="text-4xl font-light">
-          {isDark && <span className="font-mono mr-2">→</span>}
-          {title}
-        </div>
+      <div className="text-4xl font-light">
+        {isDark && <span className="font-mono mr-2">→</span>}
+        {title}
+      </div>
     </div>
-  </Link>
+  </div>
 );
 
 const Promotion = () => {
-  
+  const router = useRouter();
+  const { openForm } = useProjectForm();
+
   return (
     <div className="py-8">
       <div className="mx-auto">
@@ -48,7 +53,7 @@ const Promotion = () => {
             subtitle="You feel it too?"
             features={["Let's talk, no strings attached"]}
             isDark={true}
-            link="#contact"
+            onClick={() => openForm()}
           />
 
           <PromotionCard
@@ -59,7 +64,7 @@ const Promotion = () => {
               "Get a funding round",
               "Stand out from the crowd",
             ]}
-            link="branding"
+            onClick={() => router.push("/branding")}
           />
         </div>
       </div>
