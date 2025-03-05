@@ -54,7 +54,7 @@ const TeamMembersSection = () => {
 
     // Initial setup - set all names to inactive state
     gsap.set(teamItemsRef.current.map(ref => ref.querySelector('h3')), {
-      color: '#d6d3d1' // stone-300 equivalent
+      color: '#d6d3d1'
     });
     
     // Create a timeline for the fixed image container
