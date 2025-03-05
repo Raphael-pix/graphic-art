@@ -44,7 +44,7 @@ export default function Trending({trendingRef}) {
             />
           </div>
         </div>
-        <div className="relative w-full overflow-x-scroll hidden-scrollbar flex items-center gap-6">
+        <div className="relative w-full overflow-hidden overflow-x-scroll hidden-scrollbar flex items-center gap-6">
           {trendingItems.map((item, index) => (
             <TrendingCard
               key={index}

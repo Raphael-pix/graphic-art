@@ -6,7 +6,7 @@ import Button from "./button";
 import { Ellipsis } from "lucide-react";
 import { useProjectForm } from "@/strore/useProjectForm";
 
-const SmileyButton = () => {
+const SmileyButton = ({setIsMobileMenuOpen}) => {
   const {openForm} = useProjectForm();
   const smileyRef = useRef(null);
 
@@ -69,7 +69,7 @@ const SmileyButton = () => {
        id="menu-button"
        title={<Ellipsis size={18}/>}
        containerClass="flex items-center justify-center p-2 lg:hidden"
-       onClick={openForm}
+       onClick={()=>setIsMobileMenuOpen(true)}
       />
     </div>
   );
