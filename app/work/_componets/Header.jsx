@@ -80,7 +80,7 @@ const Header = ({ navItems, handleItemClick }) => {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed flex items-center justify-center inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed flex items-center justify-center inset-0 bg-neutral-black bg-opacity-50 z-40"
           onClick={toggleMenu}
         >
           <div

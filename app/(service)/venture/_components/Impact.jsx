@@ -6,17 +6,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ValuesSection = () => {
+const ImpactSection = () => {
   const metrics = [
     {
       value: "95%",
       description:
-        "Of the startups we branded are still in business and thriving",
+        "Of our customers are still in business and thriving",
     },
     {
-      value: "40+",
+      value: "15+",
       description:
-        "Our startups are featured in global media, such as NY Times, Forbes, TechCrunch, Bloomberg, Hypebeast, and Business Insider",
+        "Access contacts to VC's in the European and US funding landscape within our network",
     },
     {
       value: "100+",
@@ -71,18 +71,15 @@ const ValuesSection = () => {
       ref={sectionRef}
       className="overflow-hidden min-h-screen px-4 py-8 lg:py-16 lg:px-12"
     >
-      <h1 className="mx-auto text-center text-6xl font-tinos mb-16 max-w-[38rem] ">
-        <span className="font-bold font-cabin">
-          Kindness has an impact
-        </span> {" "}
-        in numbers
+      <h1 className="mx-auto text-start text-6xl font-bold mb-16 max-w-[38rem] lg:text-center">
+          Impact of projects in numbers
       </h1>
       <div className="mx-auto lg:px-4">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className="bg-secondary-blue-ish p-2 md:p-6 rounded-lg flex flex-col h-[16rem] md:h-[24rem]"
+              className="bg-neutral-white p-2 lg:p-6 rounded-lg flex flex-col h-[14rem] md:h-[24rem]"
             >
               <h2
                 ref={(el) => (metricRefs.current[index] = el)}
@@ -90,7 +87,7 @@ const ValuesSection = () => {
               >
                 {metric.value}
               </h2>
-              <p className="text-sm md:text-sm text-neutral-grey mt-auto font-tinos">
+              <p className="text-xs md:text-sm text-neutral-grey mt-auto font-tinos">
                 {metric.description}
               </p>
             </div>
@@ -101,4 +98,4 @@ const ValuesSection = () => {
   );
 };
 
-export default ValuesSection;
+export default ImpactSection;

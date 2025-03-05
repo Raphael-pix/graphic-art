@@ -47,7 +47,7 @@ const SprintPackageSection = () => {
                   key={item.id}
                   className={`font-tinos border-t border-neutral-light-grey py-2 flex gap-6 cursor-pointer transition-colors ${
                     activeItem === item.id
-                      ? "opacity-100 text-white"
+                      ? "opacity-100 text-neutral-white"
                       : "opacity-70 hover:opacity-90"
                   }`}
                   onMouseEnter={() => setActiveItem(item.id)} // Change image on hover

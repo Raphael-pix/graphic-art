@@ -2,64 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import AnimatedButton from "@/components/animatedButton";
+import { servicesData } from "@/constants";
 
-const servicesData = [
-  {
-    title: "Brand Strategy",
-    description:
-      "It's the core of your company's identity. It guides all business decisions, ensuring a consistent and impactful presence in the market.",
-    services: [
-      "Research & Insights",
-      "Unique Ways",
-      "Purpose, Mission, Vision",
-      "Value Proposition",
-      "Personality Traits",
-      "Verbal Identity",
-      "Naming",
-    ],
-    bgColor: "bg-purple-400",
-  },
-  {
-    title: "Visual Identity",
-    description:
-      "The face of your brand. It creates a powerful first impression and communicates your business values effectively.",
-    services: [
-      "Logo & Iconography",
-      "Color & Typography",
-      "Brand Guidelines",
-      "Photography Style",
-      "Illustration Style",
-    ],
-    bgColor: "bg-white",
-  },
-  {
-    title: "Marketing Strategy",
-    description:
-      "A strong marketing strategy ensures your brand reaches the right audience, builds loyalty, and increases conversions.",
-    services: [
-      "Market Research",
-      "Target Audience",
-      "Social Media Strategy",
-      "Content Marketing",
-      "Advertising Campaigns",
-    ],
-    bgColor: "bg-yellow-400",
-  },
-  {
-    title: "Digital Experience",
-    description:
-      "From websites to mobile apps, digital experience shapes how users interact with your brand in the online world.",
-    services: [
-      "Website Design",
-      "App Development",
-      "UX/UI Design",
-      "E-commerce Solutions",
-      "SEO Optimization",
-    ],
-    bgColor: "bg-black",
-  },
-];
 
 
 const Services = () => {
@@ -104,7 +48,7 @@ const Services = () => {
         });
     });
   }else {
-    animationRef.current?.kill(); // Kill GSAP animation on small screens
+    animationRef.current?.kill();
   }
   return () => animationRef.current?.kill();
   }, [isLargeScreen]);
@@ -119,7 +63,7 @@ const Services = () => {
             <div
              key={item.title} 
              ref={(el) => (cardsRef.current[i] = el)}
-             className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-6 font-standard lg:max-h-96 lg:px-8  ${item.bgColor === "bg-black" ? "text-neutral-white" : "text-neutral-black"} ${item.bgColor}`}
+             className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4 py-6 font-standard lg:max-h-96 lg:px-8  ${item.bgColor === "bg-neutral-black" ? "text-neutral-white" : "text-neutral-black"} ${item.bgColor}`}
              style={{
               zIndex: servicesData.length - i, // Ensures proper stacking
             }}

@@ -14,7 +14,7 @@ export const servicesData = [
       "Verbal Identity",
       "Naming",
     ],
-    bgColor: "bg-purple-400",
+    bgColor: "bg-secondary-purple",
   },
   {
     title: "Visual Identity",
@@ -27,7 +27,7 @@ export const servicesData = [
       "Photography Style",
       "Illustration Style",
     ],
-    bgColor: "bg-white",
+    bgColor: "bg-neutral-white",
   },
   {
     title: "Marketing Strategy",
@@ -40,7 +40,7 @@ export const servicesData = [
       "Content Marketing",
       "Advertising Campaigns",
     ],
-    bgColor: "bg-yellow-400",
+    bgColor: "bg-secondary-yellow",
   },
   {
     title: "Digital Experience",
@@ -53,7 +53,7 @@ export const servicesData = [
       "E-commerce Solutions",
       "SEO Optimization",
     ],
-    bgColor: "bg-black",
+    bgColor: "bg-neutral-black",
   },
 ];
 

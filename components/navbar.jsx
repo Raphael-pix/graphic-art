@@ -40,7 +40,7 @@ const NavBar = () => {
       {/* Mobile Menu Overlay */}
       <div
         className={`
-          fixed inset-0 bg-white transition-transform duration-300 ease-in-out z-50
+          fixed inset-0 bg-neutral-white transition-transform duration-300 ease-in-out z-50
           ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
           lg:hidden
         `}
@@ -75,7 +75,7 @@ const NavBar = () => {
 
           <div className="space-y-6 text-sm">
             <div>
-              <div className="text-gray-500 mb-1">SAY HELLO</div>
+              <div className="text-neutral-grey mb-1">SAY HELLO</div>
               <Link
                 href={`mailto:${contactInfo.sayHello}`}
                 className="underline"
@@ -85,13 +85,13 @@ const NavBar = () => {
             </div>
 
             <div>
-              <div className="text-gray-500 mb-1">EXCEPTIONAL TALENT?</div>
+              <div className="text-neutral-grey mb-1">EXCEPTIONAL TALENT?</div>
               <Link href={`mailto:${contactInfo.apply}`} className="underline">
                 {contactInfo.apply}
               </Link>
             </div>
 
-            <div className="text-gray-500">{contactInfo.location}</div>
+            <div className="text-neutral-grey">{contactInfo.location}</div>
           </div>
         </div>
       </div>

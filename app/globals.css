@@ -6,7 +6,7 @@
 
 
 :root {
-  --bg-color: #FFFFFF; 
+  --bg-color: #FEFEFA; 
   --text-color: #1E1E1E;
   --button-bg: #F9B8CB;
   --button-text: #1E1E1E;
@@ -15,7 +15,7 @@
 [data-theme = "pink"]{
   --bg-color: #FBC1D4; 
   --text-color: #1E1E1E;
-  --button-bg: #FFFFFF;
+  --button-bg: #FEFEFA;
   --button-text: #1E1E1E;
   --cursor-bg: #fd90b1;
 }
@@ -30,7 +30,7 @@
   --bg-color: #DEDEDE; 
   --text-color: #1E1E1E;
   --button-bg: #1E1E1E;
-  --button-text: #FFFFFF;
+  --button-text: #FEFEFA;
   --cursor-bg: #fc6492;
 }
 

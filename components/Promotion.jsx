@@ -7,15 +7,16 @@ const PromotionCard = ({
   features = [],
   isDark = false,
   className = "",
-  link,
+  link
 }) => (
-  <div
+  <Link
     className={`
       p-8 rounded-xl flex flex-col justify-between min-h-[400px] 
       transition-transform duration-300 hover:scale-[1.02] cursor-pointer
       ${isDark ? "bg-zinc-900 text-white" : "bg-purple-200 text-zinc-900"}
       ${className}
     `}
+    href={link}
   >
     <div>
       <div className="mb-4">
@@ -28,12 +29,12 @@ const PromotionCard = ({
       </div>
     </div>
     <div className="border-t border-current pt-6 mt-auto">
-        <Link className="text-4xl font-light" href={link}>
+        <div className="text-4xl font-light">
           {isDark && <span className="font-mono mr-2">→</span>}
           {title}
-        </Link>
+        </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Promotion = () => {
@@ -58,7 +59,7 @@ const Promotion = () => {
               "Get a funding round",
               "Stand out from the crowd",
             ]}
-            link="brand"
+            link="branding"
           />
         </div>
       </div>

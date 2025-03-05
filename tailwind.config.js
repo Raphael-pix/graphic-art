@@ -17,7 +17,7 @@ module.exports = {
         },
         neutral: {
           "black": "#1E1E1E",
-          "white":"#FFFFFF",
+          "white":"#FEFEFA",
           "grey":"#374151",
           "light-grey": "#d1d5db"
         }
