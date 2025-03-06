@@ -1,4 +1,5 @@
 "use client";
+import AnimatedText from "@/components/animatedText";
 import React from "react";
 
 const HeroSection = () => {
@@ -16,15 +17,28 @@ const HeroSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-12 lg:gap-16">
           <div className="flex flex-col justify-start lg:max-w-md">
+            <AnimatedText
+              text="Premium design,on-demand for a flat monthly fee."
+              textStyles="text-xl md:text-4xl font-bold mb-6"
+            />
+            {/*  
             <h2 className="text-xl md:text-4xl font-bold mb-6">
-              Premium design,on-demand for a  flat monthly fee.
+              Premium design,on-demand for a flat monthly fee.
             </h2>
+            */}
           </div>
 
           <div className="flex flex-col space-y-6">
+            <AnimatedText
+              text="This means your startup can consistently access premium design without the stress of escalating costsor compromises in quality"
+              textStyles="text-lg"
+            />
+            {/* 
             <p className="text-lg">
-              This means your startup can consistently access premium design without the stress of escalating costsor compromises in quality
+              This means your startup can consistently access premium design
+              without the stress of escalating costsor compromises in quality
             </p>
+             */}
           </div>
         </div>
       </div>
