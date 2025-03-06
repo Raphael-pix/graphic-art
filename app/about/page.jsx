@@ -6,6 +6,7 @@ import AboutSection from "./_components/About";
 import CustomCursor from "@/components/customCursor";
 import DisplaySection from "./_components/display";
 import TeamMembersSection from "./_components/members";
+import ImageSection from "./_components/images";
 
 const AboutPage = () => {
   return (
@@ -15,6 +16,7 @@ const AboutPage = () => {
       <HeroSection />
       <section className="mt-[100vh]">
         <AboutSection/>
+        <ImageSection />
         <DisplaySection/>
         <TeamMembersSection/>
         <Footer />

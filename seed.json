@@ -1,20 +1,38 @@
 [
   {
-    "name": "Kelly Lübbers",
-    "title": "Head Of Marketing",
-    "text": "Serious Business helped us bring our brand perception to a whole new level. At first the team challenged us to simplify our company’s narrative to then provide us with a new web and corporate design that we feel confident with that fits to our values and our market.",
-    "profilePhoto": "https://res.cloudinary.com/dzjujqvly/image/upload/v1741072170/person-3_kotxtn.jpg"
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246600/pic10_wrgl0s.webp",
+    "descripition":""
   },
   {
-    "name": "Alex Johnson",
-    "title": "CEO - TechCorp",
-    "text": "Graphiq helped us elevate our brand beyond expectations. Their team is exceptional at what they do!",
-    "profilePhoto": "https://res.cloudinary.com/dzjujqvly/image/upload/v1741072171/person-1_dvmk9l.jpg"
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246599/image-2_slmln7.jpg",
+    "descripition":""
   },
   {
-    "name": "Samantha Lee",
-    "title": "Marketing Director - StartupX",
-    "text": "The branding and storytelling expertise at Graphiq are unparalleled. They truly bring brands to life.",
-    "profilePhoto": "https://res.cloudinary.com/dzjujqvly/image/upload/v1741072170/person-2_mgvwg0.jpg"
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246599/pic9_rodpbq.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246598/pic7_gg6oiw.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246597/pic5_kgwhty.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246596/pic2_kiwjjm.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246595/pic1_s7hsia.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246595/pic1_s7hsia.webp",
+    "descripition":""
+  },
+  {
+    "url":"https://res.cloudinary.com/dzjujqvly/image/upload/v1741246595/pic1_s7hsia.webp",
+    "descripition":""
   }
 ]

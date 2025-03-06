@@ -14,15 +14,15 @@ const AnimatedText = ({ text, textStyles }) => {
 
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, y: 50 }, // Start position
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 80%", // Trigger when text is near viewport
+          start: "top bottom",
           toggleActions: "play none none none",
         },
       }
@@ -30,9 +30,9 @@ const AnimatedText = ({ text, textStyles }) => {
   }, []);
 
   return (
-    <h1 ref={textRef} className={textStyles}>
+    <p ref={textRef} className={textStyles}>
       {text}
-    </h1>
+    </p>
   );
 };
 

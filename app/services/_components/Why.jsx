@@ -1,3 +1,4 @@
+import AnimatedText from "@/components/animatedText";
 import React from "react";
 
 const WhySection = () => {
@@ -38,25 +39,39 @@ const WhySection = () => {
           </h1>
         </div>
         <div className="max-w-2xl px- 4">
-          
-            {sections.map((item) => (
-              <div key={item.index} className="grid grid-cols-1 py-4 border-t border-neutral-light-grey mb-12 md:grid-cols-2">
-                <div className="flex gap-12 items-start">
-                  <div className="text-xl font-medium">{item.index}</div>
-                  <div className="flex-1">
+          {sections.map((item) => (
+            <div
+              key={item.index}
+              className="grid grid-cols-1 py-4 border-t border-neutral-light-grey mb-12 md:grid-cols-2"
+            >
+              <div className="flex gap-12 items-start">
+                <div className="text-xl font-medium">{item.index}</div>
+                <div className="flex-1">
+                  <AnimatedText
+                    text={item.title}
+                    textStyles="text-xl font-medium"
+                  />
+                  {/*  
                     <h3 className="text-xl font-medium">
                      {item.title}
                     </h3>
-                  </div>
+                    */}
                 </div>
-                <div className="">
+              </div>
+              <div>
+                <AnimatedText
+                  text={item.description}
+                  textStyles="text-neutral-grey leading-relaxed text-sm"
+                />
+                {/*  
                   <p className="text-neutral-grey leading-relaxed text-sm">
                     {item.description}
                   </p>
-                </div>
+                  */}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

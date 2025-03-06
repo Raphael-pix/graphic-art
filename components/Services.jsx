@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedButton from "@/components/animatedButton";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { servicesData } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Services = () => {
   const router = useRouter();
   const cardsRef = useRef([]);
+  const pathname = usePathname();
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -93,13 +94,15 @@ const Services = () => {
           ))}
         </div>
       </div>
-      <div className="w-full p-6 flex items-center justify-center z-0">
-        <AnimatedButton
-          title={"Our Approach"}
-          containerStyles="bg-white"
-          onClick={() => router.push("/services")}
-        />
-      </div>
+      {pathname === "/" && (
+        <div className="w-full p-6 flex items-center justify-center z-0">
+          <AnimatedButton
+            title={"Our Approach"}
+            containerStyles="bg-white"
+            onClick={() => router.push("/services")}
+          />
+        </div>
+      )}
     </div>
   );
 };

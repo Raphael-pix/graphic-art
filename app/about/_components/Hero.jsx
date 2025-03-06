@@ -25,7 +25,6 @@ const aspectRatios = [
 
 const HeroSection = () => {
   const [trail, setTrail] = useState([]);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef([]);
   const maxTrailLength = 10;
@@ -36,22 +35,18 @@ const HeroSection = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
-    // Initial check
+
     checkMobile();
     
-    // Listen for resize events
     window.addEventListener('resize', checkMobile);
     
     return () => {
       window.removeEventListener('resize', checkMobile);
-      // Clear all timeouts on unmount
       timeoutRef.current.forEach(timer => clearTimeout(timer));
     };
   }, []);
 
   useEffect(() => {
-    // Skip animation logic on mobile
     if (isMobile) {
       setTrail([]);
       return;
@@ -59,8 +54,6 @@ const HeroSection = () => {
     
     // Track cursor position with smoother updates
     const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-      
       // Throttle image creation for better performance and smoother experience
       if (!throttleRef.current && Math.random() > 0.75) {
         throttleRef.current = true;
@@ -138,7 +131,7 @@ const HeroSection = () => {
 
 
   return (
-    <div className="absolute top-0 left-0 w-full h-screen">
+    <div className="absolute top-0 left-0 w-full h-screen cursor-pointer">
       <div className="relative w-full h-full p-4 flex flex-col items-center overflow-hidden lg:p-8">
         <div className="text-[40vw] flex h-full items-start justify-center flex-col font-bold tracking-tight relative lg:text-[25vw] lg:items-center lg:flex-row lg:gap-16">
           <div className="relative">

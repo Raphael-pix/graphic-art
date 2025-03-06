@@ -1,4 +1,5 @@
 "use client";
+import AnimatedText from "@/components/animatedText";
 import React from "react";
 
 const HeroSection = () => {
@@ -10,21 +11,33 @@ const HeroSection = () => {
             Branding projects
           </h1>
           <p className="text-xl font-kalnia md:text-xl lg:text-2xl max-w-3xl mx-auto">
-           our branding services
+            our branding services
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-12 lg:gap-16">
           <div className="flex flex-col justify-start lg:max-w-md">
+            <AnimatedText
+              text="Strategic brand solutions at every business stage"
+              textStyles="text-lg leading-tight md:text-4xl font-bold mb-6 max-md:max-w-52"
+            />
+            {/*  
             <h2 className="text-lg leading-tight md:text-4xl font-bold mb-6 max-md:max-w-52">
               Strategic brand solutions at every business stage
             </h2>
+            */}
           </div>
 
           <div className="flex flex-col space-y-6">
+            <AnimatedText
+              text="In today's market, your startup's success hinges on capturing the intrest of key stakeholders: invesors, customers, and top-tier talent. However, a frequent stumbling block lies in the initial branding choices."
+              textStyles="text-lg"
+            />
+            {/*  
             <p className="text-lg">
               In today's market, your startup's success hinges on capturing the intrest of key stakeholders: invesors, customers, and top-tier talent. However, a frequent stumbling block lies in the initial branding choices.
             </p>
+            */}
           </div>
         </div>
       </div>

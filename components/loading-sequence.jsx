@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 
-const IntroSequence = () => {
+const LoadingSequence = () => {
   const [playAnimation, setPlayAnimation] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true); // Track initial page load
   const pathname = usePathname();
@@ -89,4 +89,4 @@ const IntroSequence = () => {
   );
 };
 
-export default IntroSequence;
+export default LoadingSequence;
